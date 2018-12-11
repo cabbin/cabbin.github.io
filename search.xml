@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[zabbix-sender使用场景]]></title>
+    <url>%2F2018%2F12%2F12%2Fzabbix-sender%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%2F</url>
+    <content type="text"><![CDATA[Quick Startzabbix_sender使用场景使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用： 执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sender可以一次性上报多条结果，减少调用次数。 执行后数据有逻辑关和严谨性的，必须改成让客户端提交数据的方式，如取同一时刻的生产量和消耗量。 zabbix_sender命令详解语法： usage: zabbix_sender [-Vhv] {[-zpsI] -ko | [-zpI] -T -i &lt;file&gt; -r} [-c &lt;file&gt;] 使用参数： 1234567891011-c --config &lt;file&gt; 配置文件绝对路径-z --zabbix-server &lt;server&gt; zabbix server的IP地址-p --port &lt;server port&gt; zabbix server端口.默认10051-s --host &lt;hostname&gt; 主机名，zabbix里面配置的主机名（不是服务器的hostname），不能使用ip地址-I --source-address &lt;IP address&gt; 源IP-k --key &lt;key&gt; 监控项的key-o --value &lt;key value&gt; key值-i --input-file &lt;input file&gt; 从文件里面读取hostname、key、value 一行为一条数据，使用空格作为分隔符，如果主机名带空格，那么请使用双引号包起来-T --with-timestamps 一行一条数据，空格作为分隔符: &lt;hostname&gt; &lt;key&gt; &lt;timestamp&gt; &lt;value&gt;，配合 --input-file option，timestamp为unix时间戳-r --real-time 将数据实时提交给服务器-v --verbose 详细模式, -vv 更详细 zabbix_sender使用实例客户端主机为RedisServer，服务端IP为192.168.1.2，redis info 得到信息如下： 123456789……＃Clientsconnected_clients:2129client_longest_output_list:0client_biggest_input_buf:0blocked_clients:6…… 我们把clients的信息上传给zabbix server，zabbix item配置如下(其它值默认)： redis connected_clients: 1234567type: Zabbix trapperKey: redis.info[connected_clients]Type of information: Numberic (unsigned)Data type: Decimal redis client_longest_output_list: 1234567type: Zabbix trapperKey: redis.info[client_longest_output_list]Type of information: Numberic (unsigned)Data type: Decimal redis client_biggest_input_buf: 1234567type: Zabbix trapperKey: redis.info[client_biggest_input_buf]Type of information: Numberic (unsigned)Data type: Decimal redis blocked_clients: 1234567type: Zabbix trapperKey: redis.info[blocked_clients]Type of information: Numberic (unsigned)Data type: Decimal 1､ 提交单条数据： 1234zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[connected_clients]&quot; -o 2129 -r`zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[client_longest_output_list]&quot; -o 0 -r`zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[client_biggest_input_buf]&quot; -o 0 -r`zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[blocked_clients]&quot; -o 6 -r` 2、 指量提交数据： 123456789＃ cat redis_info.txt&quot;RedisServer&quot; &quot;redis.info[connected_clients]&quot; 2129&quot;RedisServer&quot; &quot;redis.info[client_longest_output_list]&quot; 0&quot;RedisServer&quot; &quot;redis.info[client_biggest_input_buf]&quot; 0&quot;RedisServer&quot; &quot;redis.info[blocked_clients]&quot; 6zabbix_sender -z 192.168.1.2 -i redis_info.txtinfo from server: &quot;processed: 4; failed: 0; total: 4; seconds spent: 0.000085&quot;sent: 4; skipped: 0; total: 4]]></content>
+      <categories>
+        <category>zabbix</category>
+      </categories>
+      <tags>
+        <tag>zabbix</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F12%2F09%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
