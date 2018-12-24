@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一、mysql5.7安装在16.04版本的mysql数据库，默认是5.7版本的；123sudo apt-get updatesudo apt-get install mysql-server sudo mysql_secure_installation 二、更改数据库存储目录想要修改MySQL数据库存储的目录，需要了解mysql配置文件，以及apparmor的配置文件,这里提一下apparnor">
+<meta name="description" content="Quick Start在Ubuntu 16.04版本的mysql数据库，默认是5.7版本的；123sudo apt-get updatesudo apt-get install mysql-server sudo mysql_secure_installation">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 16.04 install mysql5.7">
 <meta property="og:url" content="https://cabbin.github.io/2018/12/18/Ubuntu-16-04-install-mysql5-7/index.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="一、mysql5.7安装在16.04版本的mysql数据库，默认是5.7版本的；123sudo apt-get updatesudo apt-get install mysql-server sudo mysql_secure_installation 二、更改数据库存储目录想要修改MySQL数据库存储的目录，需要了解mysql配置文件，以及apparmor的配置文件,这里提一下apparnor">
+<meta property="og:description" content="Quick Start在Ubuntu 16.04版本的mysql数据库，默认是5.7版本的；123sudo apt-get updatesudo apt-get install mysql-server sudo mysql_secure_installation">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-24T15:56:22.154Z">
+<meta property="og:updated_time" content="2018-12-24T16:41:24.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 16.04 install mysql5.7">
-<meta name="twitter:description" content="一、mysql5.7安装在16.04版本的mysql数据库，默认是5.7版本的；123sudo apt-get updatesudo apt-get install mysql-server sudo mysql_secure_installation 二、更改数据库存储目录想要修改MySQL数据库存储的目录，需要了解mysql配置文件，以及apparmor的配置文件,这里提一下apparnor">
+<meta name="twitter:description" content="Quick Start在Ubuntu 16.04版本的mysql数据库，默认是5.7版本的；123sudo apt-get updatesudo apt-get install mysql-server sudo mysql_secure_installation">
 
 
 
@@ -384,34 +384,17 @@
       
 
       
-        <h3 id="一、mysql5-7安装"><a href="#一、mysql5-7安装" class="headerlink" title="一、mysql5.7安装"></a>一、mysql5.7安装</h3><p>在16.04版本的mysql数据库，默认是5.7版本的；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server </span><br><span class="line">sudo mysql_secure_installation</span><br></pre></td></tr></table></figure></p>
-<h3 id="二、更改数据库存储目录"><a href="#二、更改数据库存储目录" class="headerlink" title="二、更改数据库存储目录"></a>二、更改数据库存储目录</h3><p>想要修改MySQL数据库存储的目录，需要了解mysql配置文件，以及apparmor的配置文件,这里提一下apparnor 是控制访问权限的，而mysql依赖它，所以不单单是改完mysql配置文件的内容，同样的需要修改apparmor的相应的配置文件。</p>
-<h4 id="Steps"><a href="#Steps" class="headerlink" title="Steps:"></a>Steps:</h4><ol>
-<li><p>创建MySQL另外存储的目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /database/mysql</span><br><span class="line">chmod 700 /database/mysql</span><br><span class="line">chowd mysql:mysq /database/mysql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将以前的数据库复制到新的存储目录 (这样避免了再次初始化，并且数据还在)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -av /var/lib/mysql/* /database/mysql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除日志 （不删除会报错）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /database/mysql/ib_logfile0</span><br><span class="line">rm -rf /database/mysql/ib_logfile1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改my.cnf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/mysql/my.cnf</span><br><span class="line">修改datadir=/var/lib/mysql 为你需要修改的目录 这里是 datadir=/database/mysql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改apparmor的配置文件use.sbin.mysqld </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apparmor/usr.sbin.mysqld</span><br><span class="line">将</span><br><span class="line">  /var/lib/mysql/ r,</span><br><span class="line">  /var/lib/mysql/** rwk,</span><br><span class="line">修改为</span><br><span class="line">  /database/mysql/ r,</span><br><span class="line">  /database/mysql/** rwk,</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>reload apparmor的配置 并重启(这里不要停止apparmor服务，因为我在测试的时候关闭以后修改配置文件后反到是不成功， 直接修改后reload 然后重启)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service apparmor reload </span><br><span class="line">service apparmor restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启mysql</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证mysql的目录是否已经更改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">进入mysql 命令行,执行：</span><br><span class="line">show variables like &apos;%datadir%’;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>在Ubuntu 16.04版本的mysql数据库，默认是5.7版本的；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server </span><br><span class="line">sudo mysql_secure_installation</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h4 id="更改数据库存储目录"><a href="#更改数据库存储目录" class="headerlink" title="更改数据库存储目录"></a>更改数据库存储目录</h4><p>想要修改MySQL数据库存储的目录，需要了解mysql配置文件，以及apparmor的配置文件,这里提一下apparnor 是控制访问权限的，而mysql依赖它，所以不单单是改完mysql配置文件的内容，同样的需要修改apparmor的相应的配置文件。</p>
+<h4 id="创建MySQL另外存储的目录"><a href="#创建MySQL另外存储的目录" class="headerlink" title="创建MySQL另外存储的目录"></a>创建MySQL另外存储的目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /database/mysql</span><br><span class="line">chmod 700 /database/mysql</span><br><span class="line">chowd mysql:mysq /database/mysql</span><br></pre></td></tr></table></figure>
+<h4 id="将以前的数据库复制到新的存储目录"><a href="#将以前的数据库复制到新的存储目录" class="headerlink" title="将以前的数据库复制到新的存储目录"></a>将以前的数据库复制到新的存储目录</h4><p>这样避免了再次初始化，并且数据还在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -av /var/lib/mysql/* /database/mysql</span><br></pre></td></tr></table></figure></p>
+<h4 id="删除日志"><a href="#删除日志" class="headerlink" title="删除日志"></a>删除日志</h4><p><strong><em><font color="red">不删除会报错</font></em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /database/mysql/ib_logfile0</span><br><span class="line">rm -rf /database/mysql/ib_logfile1</span><br></pre></td></tr></table></figure></p>
+<h4 id="修改my-cnf"><a href="#修改my-cnf" class="headerlink" title="修改my.cnf"></a>修改my.cnf</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/mysql/my.cnf   </span><br><span class="line">修改datadir=/var/lib/mysql 为你需要修改的目录 这里是 datadir=/database/mysql</span><br></pre></td></tr></table></figure>
+<h4 id="修改apparmor的配置文件"><a href="#修改apparmor的配置文件" class="headerlink" title="修改apparmor的配置文件"></a>修改apparmor的配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apparmor/usr.sbin.mysqld</span><br><span class="line">将</span><br><span class="line">  /var/lib/mysql/ r,</span><br><span class="line">  /var/lib/mysql/** rwk,</span><br><span class="line">修改为</span><br><span class="line">  /database/mysql/ r,</span><br><span class="line">  /database/mysql/** rwk,</span><br></pre></td></tr></table></figure>
+<h4 id="reload-apparmor的配置并重启"><a href="#reload-apparmor的配置并重启" class="headerlink" title="reload apparmor的配置并重启"></a>reload apparmor的配置并重启</h4><p>这里不要停止apparmor服务，因为我在测试的时候关闭以后修改配置文件后反到是不成功， 直接修改后reload 然后重启<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service apparmor reload </span><br><span class="line">service apparmor restart</span><br></pre></td></tr></table></figure></p>
+<h4 id="重启mysql"><a href="#重启mysql" class="headerlink" title="重启mysql"></a>重启mysql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
+<h4 id="验证mysql的目录是否已经更改"><a href="#验证mysql的目录是否已经更改" class="headerlink" title="验证mysql的目录是否已经更改"></a>验证mysql的目录是否已经更改</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">进入mysql 命令行,执行：</span><br><span class="line">show variables like &apos;%datadir%’;</span><br></pre></td></tr></table></figure>
 <p>如果启动不了， 查看/var/log/mysql/error.log<br>如果出现： InnoDB: The innodb_system data file ‘ibdata1’ must be writable 请仔细核对第5步，第6步<br>如果出现启动成功，但是测试新建数据库还是在原来的目录， 试试重启服务器，或者仔细查看mysql配置文件，提醒一下 并不需要更改/usr/share/mysql/mysql-systemd-start 脚本中的datadir变量</p>
 
       
@@ -587,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、mysql5-7安装"><span class="nav-number">1.</span> <span class="nav-text">一、mysql5.7安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、更改数据库存储目录"><span class="nav-number">2.</span> <span class="nav-text">二、更改数据库存储目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Steps"><span class="nav-number">2.1.</span> <span class="nav-text">Steps:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更改数据库存储目录"><span class="nav-number">1.1.</span> <span class="nav-text">更改数据库存储目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建MySQL另外存储的目录"><span class="nav-number">1.2.</span> <span class="nav-text">创建MySQL另外存储的目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将以前的数据库复制到新的存储目录"><span class="nav-number">1.3.</span> <span class="nav-text">将以前的数据库复制到新的存储目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除日志"><span class="nav-number">1.4.</span> <span class="nav-text">删除日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改my-cnf"><span class="nav-number">1.5.</span> <span class="nav-text">修改my.cnf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改apparmor的配置文件"><span class="nav-number">1.6.</span> <span class="nav-text">修改apparmor的配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reload-apparmor的配置并重启"><span class="nav-number">1.7.</span> <span class="nav-text">reload apparmor的配置并重启</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启mysql"><span class="nav-number">1.8.</span> <span class="nav-text">重启mysql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证mysql的目录是否已经更改"><span class="nav-number">1.9.</span> <span class="nav-text">验证mysql的目录是否已经更改</span></a></li></ol></li></ol></div>
             
 
           </div>

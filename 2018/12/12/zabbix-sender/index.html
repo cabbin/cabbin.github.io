@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Quick Startzabbix_sender使用场景使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数">
+<meta name="description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
 <meta name="keywords" content="zabbix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zabbix-sender使用场景">
 <meta property="og:url" content="https://cabbin.github.io/2018/12/12/zabbix-sender/index.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="Quick Startzabbix_sender使用场景使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数">
+<meta property="og:description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T18:57:52.572Z">
+<meta property="og:updated_time" content="2018-12-24T16:35:34.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zabbix-sender使用场景">
-<meta name="twitter:description" content="Quick Startzabbix_sender使用场景使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数">
+<meta name="twitter:description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
 
 
 
@@ -384,18 +384,18 @@
       
 
       
-        <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="zabbix-sender使用场景"><a href="#zabbix-sender使用场景" class="headerlink" title="zabbix_sender使用场景"></a>zabbix_sender使用场景</h3><p>使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：</p>
+        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：</p>
 <ol>
 <li>执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。</li>
 <li>客户端脚本一次执行得到多项采集数据时，通过zabbix_sender可以一次性上报多条结果，减少调用次数。</li>
 <li>执行后数据有逻辑关和严谨性的，必须改成让客户端提交数据的方式，如取同一时刻的生产量和消耗量。</li>
 </ol>
 <a id="more"></a>
-<h3 id="zabbix-sender命令详解"><a href="#zabbix-sender命令详解" class="headerlink" title="zabbix_sender命令详解"></a>zabbix_sender命令详解</h3><p>语法：</p>
+<h4 id="zabbix-sender命令详解"><a href="#zabbix-sender命令详解" class="headerlink" title="zabbix_sender命令详解"></a>zabbix_sender命令详解</h4><p>语法：</p>
 <p><code>usage: zabbix_sender [-Vhv] {[-zpsI] -ko | [-zpI] -T -i &lt;file&gt; -r} [-c &lt;file&gt;]</code></p>
 <p>使用参数：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-c --config &lt;file&gt;                   配置文件绝对路径</span><br><span class="line">-z --zabbix-server &lt;server&gt;          zabbix server的IP地址</span><br><span class="line">-p --port &lt;server port&gt;              zabbix server端口.默认10051</span><br><span class="line">-s --host &lt;hostname&gt;                 主机名，zabbix里面配置的主机名（不是服务器的hostname），不能使用ip地址</span><br><span class="line">-I --source-address &lt;IP address&gt;     源IP</span><br><span class="line">-k --key &lt;key&gt;                       监控项的key</span><br><span class="line">-o --value &lt;key value&gt;               key值</span><br><span class="line">-i --input-file &lt;input file&gt;         从文件里面读取hostname、key、value 一行为一条数据，使用空格作为分隔符，如果主机名带空格，那么请使用双引号包起来</span><br><span class="line">-T --with-timestamps                 一行一条数据，空格作为分隔符: &lt;hostname&gt; &lt;key&gt; &lt;timestamp&gt; &lt;value&gt;，配合 --input-file option，timestamp为unix时间戳</span><br><span class="line">-r --real-time                       将数据实时提交给服务器</span><br><span class="line">-v --verbose                         详细模式, -vv 更详细</span><br></pre></td></tr></table></figure>
-<h3 id="zabbix-sender使用实例"><a href="#zabbix-sender使用实例" class="headerlink" title="zabbix_sender使用实例"></a>zabbix_sender使用实例</h3><p>客户端主机为RedisServer，服务端IP为192.168.1.2，redis info 得到信息如下：</p>
+<h4 id="zabbix-sender使用实例"><a href="#zabbix-sender使用实例" class="headerlink" title="zabbix_sender使用实例"></a>zabbix_sender使用实例</h4><p>客户端主机为RedisServer，服务端IP为192.168.1.2，redis info 得到信息如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">……</span><br><span class="line"></span><br><span class="line">＃Clients</span><br><span class="line">connected_clients:2129</span><br><span class="line">client_longest_output_list:0</span><br><span class="line">client_biggest_input_buf:0</span><br><span class="line">blocked_clients:6</span><br><span class="line"></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
 <p>我们把clients的信息上传给zabbix server，zabbix item配置如下(其它值默认)：</p>
 <p>redis connected_clients:</p>
@@ -580,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zabbix-sender使用场景"><span class="nav-number">1.1.</span> <span class="nav-text">zabbix_sender使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zabbix-sender命令详解"><span class="nav-number">1.2.</span> <span class="nav-text">zabbix_sender命令详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zabbix-sender使用实例"><span class="nav-number">1.3.</span> <span class="nav-text">zabbix_sender使用实例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#zabbix-sender命令详解"><span class="nav-number">1.1.</span> <span class="nav-text">zabbix_sender命令详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zabbix-sender使用实例"><span class="nav-number">1.2.</span> <span class="nav-text">zabbix_sender使用实例</span></a></li></ol></li></ol></div>
             
 
           </div>
