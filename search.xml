@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[yum install nginx]]></title>
+    <url>%2F2018%2F12%2F25%2Fyum-install-nginx%2F</url>
+    <content type="text"><![CDATA[Quick Start新增nginx.repo文件cat /etc/yum.repos.d/nginx.repo12345[nginx]name=nginx repobaseurl=http://nginx.org/packages/centos/$releasever/$basearch/gpgcheck=0enabled=1 安装nginx1yum install nginx]]></content>
+      <categories>
+        <category>nginx</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux设置默认编辑器]]></title>
+    <url>%2F2018%2F12%2F25%2FLinux-Set-Default-Editor%2F</url>
+    <content type="text"><![CDATA[Quick StartLinux设置默认编辑器为vi在使用edquota编辑限额时出现错误：1edquota: cannot exec /usr/bin/editor 根据错误提示，edquota命令没有找到可用的编辑器，于是设置系统默认的编辑器。在linux 中设置默认编辑器为vi1export EDITOR=vi]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>vi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux查看操作系统版本]]></title>
     <url>%2F2018%2F12%2F25%2FLinux-Get-OS-Release%2F</url>
-    <content type="text"><![CDATA[Quick StartUbuntu123456lsb_release -aNo LSB modules are available.Distributor ID: UbuntuDescription: Ubuntu 14.04.1 LTSRelease: 14.04Codename: trusty Centos方法一1234Centos:cat /etc/issueCentOS release 6.8 (Final)Kernel \r on an \m 方法二12cat /etc/redhat-releaseCentOS release 6.8 (Final)]]></content>
+    <content type="text"><![CDATA[Quick StartUbuntulsb_release -a12345No LSB modules are available.Distributor ID: UbuntuDescription: Ubuntu 14.04.1 LTSRelease: 14.04Codename: trusty Centos方法一cat /etc/issue12CentOS release 6.8 (Final)Kernel \r on an \m 方法二cat /etc/redhat-release1CentOS release 6.8 (Final)]]></content>
       <categories>
         <category>Linux</category>
       </categories>
