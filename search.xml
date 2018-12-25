@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux查看操作系统版本]]></title>
+    <url>%2F2018%2F12%2F25%2FLinux-Get-OS-Release%2F</url>
+    <content type="text"><![CDATA[Quick StartUbuntu123456lsb_release -aNo LSB modules are available.Distributor ID: UbuntuDescription: Ubuntu 14.04.1 LTSRelease: 14.04Codename: trusty Centos方法一1234Centos:cat /etc/issueCentOS release 6.8 (Final)Kernel \r on an \m 方法二12cat /etc/redhat-releaseCentOS release 6.8 (Final)]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[apt-get install JDK8]]></title>
     <url>%2F2018%2F12%2F25%2Fapt-get-install-JDK8%2F</url>
     <content type="text"><![CDATA[Quick Start安装python-software-properties12sudo apt-get install python-software-propertiessudo apt-get install software-properties-common 首先添加ppa1sudo add-apt-repository ppa:webupd8team/java 然后更新系统1sudo apt-get update 最后开始安装12345sudo apt-get install oracle-java8-installerjava -versionjava version “1.8.0_05&quot;Java(TM) SE Runtime Environment (build 1.8.0_05-b13) Java HotSpot(TM) Server VM (build 25.5-b02, mixed mode) java版本切换1sudo update-java-alternatives -s java-8-oracle]]></content>
@@ -31,8 +42,8 @@
         <category>Kubernetes</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>Kubernetes</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
