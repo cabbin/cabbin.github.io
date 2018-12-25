@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[apt-get install JDK8]]></title>
+    <url>%2F2018%2F12%2F25%2Fapt-get-install-JDK8%2F</url>
+    <content type="text"><![CDATA[Quick Start安装python-software-properties12sudo apt-get install python-software-propertiessudo apt-get install software-properties-common 首先添加ppa1sudo add-apt-repository ppa:webupd8team/java 然后更新系统1sudo apt-get update 最后开始安装12345sudo apt-get install oracle-java8-installerjava -versionjava version “1.8.0_05&quot;Java(TM) SE Runtime Environment (build 1.8.0_05-b13) Java HotSpot(TM) Server VM (build 25.5-b02, mixed mode) java版本切换1sudo update-java-alternatives -s java-8-oracle]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>JDK8</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[阿里云yum仓库镜像安装kubernetes]]></title>
     <url>%2F2018%2F12%2F25%2Faliyum-install-kubernetes%2F</url>
     <content type="text"><![CDATA[Quick Start安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。注意不要开启check。 12345678910cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo[kubernetes]name=Kubernetesbaseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64enabled=1gpgcheck=0repo_gpgcheck=0gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpgEOF]]></content>
       <categories>
-        <category>kubernetes</category>
+        <category>Kubernetes</category>
       </categories>
       <tags>
-        <tag>kubernetes</tag>
+        <tag>Kubernetes</tag>
       </tags>
   </entry>
   <entry>
@@ -19,8 +31,8 @@
         <category>Kubernetes</category>
       </categories>
       <tags>
-        <tag>Kubernetes</tag>
         <tag>Docker</tag>
+        <tag>Kubernetes</tag>
       </tags>
   </entry>
   <entry>
