@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu操作系统通过saltstack安装nginx]]></title>
+    <url>%2F2018%2F12%2F26%2Fsaltstack-install-nginx%2F</url>
+    <content type="text"><![CDATA[Quick Start新建nginx的state.sls文件12345678910nginx: pkgrepo.managed: - name: deb http://nginx.org/packages/ubuntu/ &#123;&#123;grains[&apos;oscodename&apos;]&#125;&#125; nginx - key_url: http://nginx.org/keys/nginx_signing.key - refresh_db: true - require_in: - pkg: nginx pkg.installed: - name: nginx 测试运行结果123456789101112131415161718192021222324252627salt &apos;*&apos; state.sls nginx test=Trueminion1:---------- ID: nginx Function: pkgrepo.managed Name: deb http://nginx.org/packages/ubuntu/ xenial nginx Result: None Comment: Package repo &apos;deb http://nginx.org/packages/ubuntu/ xenial nginx&apos; will be configured. This may cause pkg states to behave differently than stated if this action is repeated without test=True, due to the differences in the configured repositories. Started: 23:49:18.727125 Duration: 96.173 ms Changes:---------- ID: nginx Function: pkg.installed Result: None Comment: The following packages would be installed/updated: nginx Started: 23:49:22.886030 Duration: 3786.682 ms Changes:Summary for minion1------------Succeeded: 2 (unchanged=2)Failed: 0------------Total states run: 2Total run time: 3.883 s]]></content>
+      <categories>
+        <category>saltstack</category>
+      </categories>
+      <tags>
+        <tag>saltstack</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu操作系统通过saltstack安装docker]]></title>
+    <url>%2F2018%2F12%2F25%2Fsaltstack-install-docker%2F</url>
+    <content type="text"><![CDATA[Quick StartDocker是一个开源的应用容器引擎，基于Go语言并遵从Apache2.0协议开源，源代码部署在GitHub上，现已被广泛使用。常规情况下，Docker作为基础组件打在os的镜像里，对于后期加入管理的主机可通过saltstack进行批量安装。 新建docker的state.sls文件12345678910111213141516171819202122repository: pkg.installed: - pkgs: - apt-transport-https - curl - ca-certificates - software-properties-common - refresh: Truedocker-ce: pkgrepo.managed: - name: deb [arch=amd64] https://download.docker.com/linux/ubuntu &#123;&#123;grains[&apos;oscodename&apos;]&#125;&#125; stable - key_url: https://download.docker.com/linux/ubuntu/gpg - refresh_db: true - require: - pkg: repository - require_in: - pkg: docker-ce pkg.installed: - name: docker-ce - refresh: True 测试执行结果1234567891011121314151617181920212223242526272829303132333435salt &apos;*&apos; state.sls docker test=Trueminion1:---------- ID: repository Function: pkg.installed Result: None Comment: The following packages would be installed/updated: software-properties-common, apt-transport-https Started: 23:30:54.553191 Duration: 3797.25 ms Changes:---------- ID: docker-ce Function: pkgrepo.managed Name: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable Result: None Comment: Package repo &apos;deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable&apos; will be configured. This may cause pkg states to behave differently than stated if this action is repeated without test=True, due to the differences in the configured repositories. Started: 23:30:58.355189 Duration: 114.982 ms Changes:---------- ID: docker-ce Function: pkg.installed Result: None Comment: The following packages would be installed/updated: docker-ce Started: 23:30:58.470868 Duration: 56.745 ms Changes:Summary for minion1------------Succeeded: 3 (unchanged=3)Failed: 0------------Total states run: 3Total run time: 3.969 s]]></content>
+      <categories>
+        <category>saltstack</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>saltstack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[yum install nginx]]></title>
     <url>%2F2018%2F12%2F25%2Fyum-install-nginx%2F</url>
     <content type="text"><![CDATA[Quick Start新增nginx.repo文件cat /etc/yum.repos.d/nginx.repo12345[nginx]name=nginx repobaseurl=http://nginx.org/packages/centos/$releasever/$basearch/gpgcheck=0enabled=1 安装nginx1yum install nginx]]></content>
@@ -51,10 +75,10 @@
     <url>%2F2018%2F12%2F25%2Faliyum-install-kubernetes%2F</url>
     <content type="text"><![CDATA[Quick Start安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。注意不要开启check。 12345678910cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo[kubernetes]name=Kubernetesbaseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64enabled=1gpgcheck=0repo_gpgcheck=0gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpgEOF]]></content>
       <categories>
-        <category>Kubernetes</category>
+        <category>kubernetes</category>
       </categories>
       <tags>
-        <tag>Kubernetes</tag>
+        <tag>kubernetes</tag>
       </tags>
   </entry>
   <entry>
@@ -62,11 +86,11 @@
     <url>%2F2018%2F12%2F24%2Fmac-install-Kubernetes%2F</url>
     <content type="text"><![CDATA[Quick Start解决mac docker启动不了Kubernetes的问题docker for mac edge版新增了Kubernetes功能。但由于墙的问题，启动Kubernetes时，一直显示Kubernetes is starting.解决方法参考：https://github.com/maguowei/k8s-docker-for-mac docker版本： 先安装以上EDGE版如已安装，恢复出厂设置，参考docker官方文档。 配置本地私服Registry mirrors里增加http://registry.docker-cn.com， 注意不要用https，否则会提示证书错误 打开命令行工具，执行123git clone https://github.com/maguowei/k8s-docker-for-mac.gitcd k8s-docker-for-mac/./load_images.sh 按下图打勾，勾选k8s]]></content>
       <categories>
-        <category>Kubernetes</category>
+        <category>kubernetes</category>
       </categories>
       <tags>
-        <tag>Kubernetes</tag>
-        <tag>Docker</tag>
+        <tag>kubernetes</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
