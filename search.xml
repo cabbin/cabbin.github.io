@@ -19,8 +19,8 @@
         <category>saltstack</category>
       </categories>
       <tags>
-        <tag>saltstack</tag>
         <tag>nginx</tag>
+        <tag>saltstack</tag>
       </tags>
   </entry>
   <entry>
@@ -32,7 +32,6 @@
       </categories>
       <tags>
         <tag>saltstack</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -85,9 +84,6 @@
     <title><![CDATA[阿里云yum仓库镜像安装kubernetes]]></title>
     <url>%2F2018%2F12%2F25%2Faliyum-install-kubernetes%2F</url>
     <content type="text"><![CDATA[Quick Start安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。注意不要开启check。 12345678910cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo[kubernetes]name=Kubernetesbaseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64enabled=1gpgcheck=0repo_gpgcheck=0gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpgEOF]]></content>
-      <categories>
-        <category>Kubernetes</category>
-      </categories>
       <tags>
         <tag>Kubernetes</tag>
       </tags>
@@ -96,12 +92,8 @@
     <title><![CDATA[mac install Kubernetes]]></title>
     <url>%2F2018%2F12%2F24%2Fmac-install-Kubernetes%2F</url>
     <content type="text"><![CDATA[Quick Start解决mac docker启动不了Kubernetes的问题docker for mac edge版新增了Kubernetes功能。但由于墙的问题，启动Kubernetes时，一直显示Kubernetes is starting.解决方法参考：https://github.com/maguowei/k8s-docker-for-mac docker版本： 先安装以上EDGE版如已安装，恢复出厂设置，参考docker官方文档。 配置本地私服Registry mirrors里增加http://registry.docker-cn.com， 注意不要用https，否则会提示证书错误 打开命令行工具，执行123git clone https://github.com/maguowei/k8s-docker-for-mac.gitcd k8s-docker-for-mac/./load_images.sh 按下图打勾，勾选k8s]]></content>
-      <categories>
-        <category>Kubernetes</category>
-      </categories>
       <tags>
         <tag>Kubernetes</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
