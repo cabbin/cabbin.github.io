@@ -31,8 +31,8 @@
         <category>saltstack</category>
       </categories>
       <tags>
-        <tag>saltstack</tag>
         <tag>docker</tag>
+        <tag>saltstack</tag>
       </tags>
   </entry>
   <entry>
