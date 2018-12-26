@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="saltstack,docker,">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Quick StartDocker是一个开源的应用容器引擎，基于Go语言并遵从Apache2.0协议开源，源代码部署在GitHub上，现已被广泛使用。常规情况下，Docker作为基础组件打在os的镜像里，对于后期加入管理的主机可通过saltstack进行批量安装。">
-<meta name="keywords" content="saltstack,docker">
+<meta name="description" content="Linux中的许多操作在终端（Terminal）中十分的快捷，记住一些快捷键的操作更得心应手。在Ubuntu中打开终端的快捷键是Ctrl+Alt+T。其他的一些常用的快捷键如下：">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu操作系统通过saltstack安装docker">
-<meta property="og:url" content="https://cabbin.github.io/2018/12/25/saltstack-install-docker/index.html">
+<meta property="og:title" content="Linux终端常用的快捷键">
+<meta property="og:url" content="https://cabbin.github.io/2018/12/26/Terminal-Shortcut-keys/index.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="Quick StartDocker是一个开源的应用容器引擎，基于Go语言并遵从Apache2.0协议开源，源代码部署在GitHub上，现已被广泛使用。常规情况下，Docker作为基础组件打在os的镜像里，对于后期加入管理的主机可通过saltstack进行批量安装。">
+<meta property="og:description" content="Linux中的许多操作在终端（Terminal）中十分的快捷，记住一些快捷键的操作更得心应手。在Ubuntu中打开终端的快捷键是Ctrl+Alt+T。其他的一些常用的快捷键如下：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-25T23:43:19.224Z">
+<meta property="og:updated_time" content="2018-12-26T01:46:28.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu操作系统通过saltstack安装docker">
-<meta name="twitter:description" content="Quick StartDocker是一个开源的应用容器引擎，基于Go语言并遵从Apache2.0协议开源，源代码部署在GitHub上，现已被广泛使用。常规情况下，Docker作为基础组件打在os的镜像里，对于后期加入管理的主机可通过saltstack进行批量安装。">
+<meta name="twitter:title" content="Linux终端常用的快捷键">
+<meta name="twitter:description" content="Linux中的许多操作在终端（Terminal）中十分的快捷，记住一些快捷键的操作更得心应手。在Ubuntu中打开终端的快捷键是Ctrl+Alt+T。其他的一些常用的快捷键如下：">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://cabbin.github.io/2018/12/25/saltstack-install-docker/">
+  <link rel="canonical" href="https://cabbin.github.io/2018/12/26/Terminal-Shortcut-keys/">
 
 
 
 
 
-  <title>Ubuntu操作系统通过saltstack安装docker | Ops as a Service</title>
+  <title>Linux终端常用的快捷键 | Ops as a Service</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cabbin.github.io/2018/12/25/saltstack-install-docker/">
+    <link itemprop="mainEntityOfPage" href="https://cabbin.github.io/2018/12/26/Terminal-Shortcut-keys/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cabbin">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu操作系统通过saltstack安装docker</h1>
+          <h1 class="post-title" itemprop="name headline">Linux终端常用的快捷键</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T20:34:18+08:00">
-                2018-12-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-26T09:42:43+08:00">
+                2018-12-26
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/saltstack/" itemprop="url" rel="index">
-                    <span itemprop="name">saltstack</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -384,9 +384,205 @@
       
 
       
-        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>Docker是一个开源的应用容器引擎，基于Go语言并遵从Apache2.0协议开源，源代码部署在GitHub上，现已被广泛使用。<br>常规情况下，Docker作为基础组件打在os的镜像里，对于后期加入管理的主机可通过saltstack进行批量安装。<br><a id="more"></a></p>
-<h4 id="新建docker的state-sls文件"><a href="#新建docker的state-sls文件" class="headerlink" title="新建docker的state.sls文件"></a>新建docker的state.sls文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">repository:</span><br><span class="line">  pkg.installed:</span><br><span class="line">    - pkgs:</span><br><span class="line">      - apt-transport-https</span><br><span class="line">      - curl</span><br><span class="line">      - ca-certificates</span><br><span class="line">      - software-properties-common</span><br><span class="line">    - refresh: True</span><br><span class="line"></span><br><span class="line">docker-ce:</span><br><span class="line">  pkgrepo.managed:</span><br><span class="line">    - name: deb [arch=amd64] https://download.docker.com/linux/ubuntu &#123;&#123;grains[&apos;oscodename&apos;]&#125;&#125; stable</span><br><span class="line">    - key_url: https://download.docker.com/linux/ubuntu/gpg</span><br><span class="line">    - refresh_db: true</span><br><span class="line">    - require:</span><br><span class="line">      - pkg: repository</span><br><span class="line">    - require_in:</span><br><span class="line">      - pkg: docker-ce</span><br><span class="line"></span><br><span class="line">  pkg.installed:</span><br><span class="line">    - name: docker-ce</span><br><span class="line">    - refresh: True</span><br></pre></td></tr></table></figure>
-<h4 id="测试执行结果"><a href="#测试执行结果" class="headerlink" title="测试执行结果"></a>测试执行结果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">salt &apos;*&apos; state.sls docker test=True</span><br><span class="line">minion1:</span><br><span class="line">----------</span><br><span class="line">          ID: repository</span><br><span class="line">    Function: pkg.installed</span><br><span class="line">      Result: None</span><br><span class="line">     Comment: The following packages would be installed/updated: software-properties-common, apt-transport-https</span><br><span class="line">     Started: 23:30:54.553191</span><br><span class="line">    Duration: 3797.25 ms</span><br><span class="line">     Changes:</span><br><span class="line">----------</span><br><span class="line">          ID: docker-ce</span><br><span class="line">    Function: pkgrepo.managed</span><br><span class="line">        Name: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable</span><br><span class="line">      Result: None</span><br><span class="line">     Comment: Package repo &apos;deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable&apos; will be configured. This may cause pkg states to behave differently than stated if this action is repeated without test=True, due to the differences in the configured repositories.</span><br><span class="line">     Started: 23:30:58.355189</span><br><span class="line">    Duration: 114.982 ms</span><br><span class="line">     Changes:</span><br><span class="line">----------</span><br><span class="line">          ID: docker-ce</span><br><span class="line">    Function: pkg.installed</span><br><span class="line">      Result: None</span><br><span class="line">     Comment: The following packages would be installed/updated: docker-ce</span><br><span class="line">     Started: 23:30:58.470868</span><br><span class="line">    Duration: 56.745 ms</span><br><span class="line">     Changes:</span><br><span class="line"></span><br><span class="line">Summary for minion1</span><br><span class="line">------------</span><br><span class="line">Succeeded: 3 (unchanged=3)</span><br><span class="line">Failed:    0</span><br><span class="line">------------</span><br><span class="line">Total states run:     3</span><br><span class="line">Total run time:   3.969 s</span><br></pre></td></tr></table></figure>
+        <p>Linux中的许多操作在终端（Terminal）中十分的快捷，记住一些快捷键的操作更得心应手。在Ubuntu中打开终端的快捷键是Ctrl+Alt+T。其他的一些常用的快捷键如下：<br><a id="more"></a></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tab</td>
+<td>自动补全</td>
+</tr>
+<tr>
+<td>Ctrl+a</td>
+<td>光标移动到开始位置</td>
+</tr>
+<tr>
+<td>Ctrl+e</td>
+<td>光标移动到最末尾</td>
+</tr>
+<tr>
+<td>Ctrl+k</td>
+<td>删除此处至末尾的所有内容</td>
+</tr>
+<tr>
+<td>Ctrl+u</td>
+<td>删除此处至开始的所有内容</td>
+</tr>
+<tr>
+<td>Ctrl+d</td>
+<td>删除当前字符</td>
+</tr>
+<tr>
+<td>Ctrl+h</td>
+<td>删除当前字符前一个字符</td>
+</tr>
+<tr>
+<td>Ctrl+w</td>
+<td>删除此处到左边的单词</td>
+</tr>
+<tr>
+<td>Ctrl+y</td>
+<td>粘贴由Ctrl+u， Ctrl+d， Ctrl+w删除的单词</td>
+</tr>
+<tr>
+<td>Ctrl+l</td>
+<td>相当于clear，即清屏</td>
+</tr>
+<tr>
+<td>Ctrl+r</td>
+<td>查找历史命令</td>
+</tr>
+<tr>
+<td>Ctrl+b</td>
+<td>向回移动光标</td>
+</tr>
+<tr>
+<td>Ctrl+f</td>
+<td>向前移动光标</td>
+</tr>
+<tr>
+<td>Ctrl+t</td>
+<td>将光标位置的字符和前一个字符进行位置交换</td>
+</tr>
+<tr>
+<td>Ctrl+&amp;</td>
+<td>恢复 ctrl+h 或者 ctrl+d 或者 ctrl+w 删除的内容</td>
+</tr>
+<tr>
+<td>Ctrl+S</td>
+<td>暂停屏幕输出</td>
+</tr>
+<tr>
+<td>Ctrl+Q</td>
+<td>继续屏幕输出</td>
+</tr>
+<tr>
+<td>Ctrl+Left-Arrow</td>
+<td>光标移动到上一个单词的词首</td>
+</tr>
+<tr>
+<td>Ctrl+Right-Arrow</td>
+<td>光标移动到下一个单词的词尾</td>
+</tr>
+<tr>
+<td>Ctrl+p</td>
+<td>向上显示缓存命令</td>
+</tr>
+<tr>
+<td>Ctrl+n</td>
+<td>向下显示缓存命令</td>
+</tr>
+<tr>
+<td>Ctrl+d</td>
+<td>关闭终端</td>
+</tr>
+<tr>
+<td>Ctrl+xx</td>
+<td>在EOL和当前光标位置移动</td>
+</tr>
+<tr>
+<td>Ctrl+x@</td>
+<td>显示可能hostname补全</td>
+</tr>
+<tr>
+<td>Ctrl+c</td>
+<td>终止进程/命令</td>
+</tr>
+<tr>
+<td>Shift+上或下</td>
+<td>终端上下滚动</td>
+</tr>
+<tr>
+<td>Shift+PgUp/PgDn</td>
+<td>终端上下翻页滚动</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+n</td>
+<td>新终端</td>
+</tr>
+<tr>
+<td>alt+F2</td>
+<td>输入gnome-terminal打开终端</td>
+</tr>
+<tr>
+<td>Shift+Ctrl+T</td>
+<td>打开新的标签页</td>
+</tr>
+<tr>
+<td>Shift+Ctrl+W</td>
+<td>关闭标签页</td>
+</tr>
+<tr>
+<td>Shift+Ctrl+C</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>Shift+Ctrl+V</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>Alt+数字</td>
+<td>切换至对应的标签页</td>
+</tr>
+<tr>
+<td>Shift+Ctrl+N</td>
+<td>打开新的终端窗口</td>
+</tr>
+<tr>
+<td>Shift+Ctrl+Q</td>
+<td>管壁终端窗口</td>
+</tr>
+<tr>
+<td>Shift+Ctrl+PgUp/PgDn</td>
+<td>左移右移标签页</td>
+</tr>
+<tr>
+<td>Ctrl+PgUp/PgDn</td>
+<td>切换标签页</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>打开帮助指南</td>
+</tr>
+<tr>
+<td>F10</td>
+<td>激活菜单栏</td>
+</tr>
+<tr>
+<td>F11</td>
+<td>全屏切换</td>
+</tr>
+<tr>
+<td>Alt+F</td>
+<td>打开 “文件” 菜单（file）</td>
+</tr>
+<tr>
+<td>Alt+E</td>
+<td>打开 “编辑” 菜单（edit）</td>
+</tr>
+<tr>
+<td>Alt+V</td>
+<td>打开 “查看” 菜单（view）</td>
+</tr>
+<tr>
+<td>Alt+S</td>
+<td>打开 “搜索” 菜单（search）</td>
+</tr>
+<tr>
+<td>Alt+T</td>
+<td>打开 “终端” 菜单（terminal）</td>
+</tr>
+<tr>
+<td>Alt+H</td>
+<td>打开 “帮助” 菜单（help）</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -404,9 +600,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/saltstack/" rel="tag"># saltstack</a>
-          
-            <a href="/tags/docker/" rel="tag"># docker</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -419,8 +613,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/25/yum-install-nginx/" rel="next" title="yum install nginx">
-                <i class="fa fa-chevron-left"></i> yum install nginx
+              <a href="/2018/12/26/saltstack-install-nginx/" rel="next" title="Ubuntu操作系统通过saltstack安装nginx">
+                <i class="fa fa-chevron-left"></i> Ubuntu操作系统通过saltstack安装nginx
               </a>
             
           </div>
@@ -428,10 +622,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/26/saltstack-install-nginx/" rel="prev" title="Ubuntu操作系统通过saltstack安装nginx">
-                Ubuntu操作系统通过saltstack安装nginx <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -483,17 +673,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -553,22 +734,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建docker的state-sls文件"><span class="nav-number">1.1.</span> <span class="nav-text">新建docker的state.sls文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试执行结果"><span class="nav-number">1.2.</span> <span class="nav-text">测试执行结果</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
