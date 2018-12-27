@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vim multiple files]]></title>
+    <url>%2F2018%2F12%2F27%2Fvim-multiple-files%2F</url>
+    <content type="text"><![CDATA[Quick Start打开多个文件 vim还没有启动的时候:12在终端里直接打开所有想要打开的文件vim file1 file2 ... filen vim启动打开多个文件: 12在编辑模式输入:e file 同时显示多个文件: 12:sp //水平切分窗口:vsplit //垂直切分窗口 在文件之间切换 一个文件切换到其他文件 12345Ctrl+6 //两文件间的切换:bn //下一个文件:bp //上一个文件:ls //列出打开的文件，带编号:b1~n //切换至第n个文件 在窗格间切换的方法对于用(v)split在多个窗格中打开的文件，这种方法只会在当前窗格中切换不同的文件。 123Ctrl+w+方向键——切换到前／下／上／后一个窗格Ctrl+w+h/j/k/l ——同上Ctrl+ww——依次向后切换到下一个窗格中]]></content>
+      <categories>
+        <category>vim</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux终端常用的快捷键]]></title>
     <url>%2F2018%2F12%2F26%2FTerminal-Shortcut-keys%2F</url>
     <content type="text"><![CDATA[Linux中的许多操作在终端（Terminal）中十分的快捷，记住一些快捷键的操作更得心应手。在Ubuntu中打开终端的快捷键是Ctrl+Alt+T。其他的一些常用的快捷键如下： 快捷键 功能 Tab 自动补全 Ctrl+a 光标移动到开始位置 Ctrl+e 光标移动到最末尾 Ctrl+k 删除此处至末尾的所有内容 Ctrl+u 删除此处至开始的所有内容 Ctrl+d 删除当前字符 Ctrl+h 删除当前字符前一个字符 Ctrl+w 删除此处到左边的单词 Ctrl+y 粘贴由Ctrl+u， Ctrl+d， Ctrl+w删除的单词 Ctrl+l 相当于clear，即清屏 Ctrl+r 查找历史命令 Ctrl+b 向回移动光标 Ctrl+f 向前移动光标 Ctrl+t 将光标位置的字符和前一个字符进行位置交换 Ctrl+&amp; 恢复 ctrl+h 或者 ctrl+d 或者 ctrl+w 删除的内容 Ctrl+S 暂停屏幕输出 Ctrl+Q 继续屏幕输出 Ctrl+Left-Arrow 光标移动到上一个单词的词首 Ctrl+Right-Arrow 光标移动到下一个单词的词尾 Ctrl+p 向上显示缓存命令 Ctrl+n 向下显示缓存命令 Ctrl+d 关闭终端 Ctrl+xx 在EOL和当前光标位置移动 Ctrl+x@ 显示可能hostname补全 Ctrl+c 终止进程/命令 Shift+上或下 终端上下滚动 Shift+PgUp/PgDn 终端上下翻页滚动 Ctrl+Shift+n 新终端 alt+F2 输入gnome-terminal打开终端 Shift+Ctrl+T 打开新的标签页 Shift+Ctrl+W 关闭标签页 Shift+Ctrl+C 复制 Shift+Ctrl+V 粘贴 Alt+数字 切换至对应的标签页 Shift+Ctrl+N 打开新的终端窗口 Shift+Ctrl+Q 管壁终端窗口 Shift+Ctrl+PgUp/PgDn 左移右移标签页 Ctrl+PgUp/PgDn 切换标签页 F1 打开帮助指南 F10 激活菜单栏 F11 全屏切换 Alt+F 打开 “文件” 菜单（file） Alt+E 打开 “编辑” 菜单（edit） Alt+V 打开 “查看” 菜单（view） Alt+S 打开 “搜索” 菜单（search） Alt+T 打开 “终端” 菜单（terminal） Alt+H 打开 “帮助” 菜单（help）]]></content>
@@ -19,8 +30,8 @@
         <category>saltstack</category>
       </categories>
       <tags>
-        <tag>nginx</tag>
         <tag>saltstack</tag>
+        <tag>nginx</tag>
       </tags>
   </entry>
   <entry>
