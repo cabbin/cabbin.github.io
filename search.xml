@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[vim multiple files]]></title>
-    <url>%2F2018%2F12%2F27%2Fvim-multiple-files%2F</url>
+    <title><![CDATA[vim多文件之间的切换]]></title>
+    <url>%2Fvim-multiple-files.html</url>
     <content type="text"><![CDATA[Quick Start打开多个文件 vim还没有启动的时候:12在终端里直接打开所有想要打开的文件vim file1 file2 ... filen vim启动打开多个文件: 12在编辑模式输入:e file 同时显示多个文件: 12:sp //水平切分窗口:vsplit //垂直切分窗口 在文件之间切换 一个文件切换到其他文件 12345Ctrl+6 //两文件间的切换:bn //下一个文件:bp //上一个文件:ls //列出打开的文件，带编号:b1~n //切换至第n个文件 在窗格间切换的方法对于用(v)split在多个窗格中打开的文件，这种方法只会在当前窗格中切换不同的文件。 123Ctrl+w+方向键——切换到前／下／上／后一个窗格Ctrl+w+h/j/k/l ——同上Ctrl+ww——依次向后切换到下一个窗格中]]></content>
       <categories>
         <category>vim</category>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[Linux终端常用的快捷键]]></title>
-    <url>%2F2018%2F12%2F26%2FTerminal-Shortcut-keys%2F</url>
+    <url>%2FTerminal-Shortcut-keys.html</url>
     <content type="text"><![CDATA[Linux中的许多操作在终端（Terminal）中十分的快捷，记住一些快捷键的操作更得心应手。在Ubuntu中打开终端的快捷键是Ctrl+Alt+T。其他的一些常用的快捷键如下： 快捷键 功能 Tab 自动补全 Ctrl+a 光标移动到开始位置 Ctrl+e 光标移动到最末尾 Ctrl+k 删除此处至末尾的所有内容 Ctrl+u 删除此处至开始的所有内容 Ctrl+d 删除当前字符 Ctrl+h 删除当前字符前一个字符 Ctrl+w 删除此处到左边的单词 Ctrl+y 粘贴由Ctrl+u， Ctrl+d， Ctrl+w删除的单词 Ctrl+l 相当于clear，即清屏 Ctrl+r 查找历史命令 Ctrl+b 向回移动光标 Ctrl+f 向前移动光标 Ctrl+t 将光标位置的字符和前一个字符进行位置交换 Ctrl+&amp; 恢复 ctrl+h 或者 ctrl+d 或者 ctrl+w 删除的内容 Ctrl+S 暂停屏幕输出 Ctrl+Q 继续屏幕输出 Ctrl+Left-Arrow 光标移动到上一个单词的词首 Ctrl+Right-Arrow 光标移动到下一个单词的词尾 Ctrl+p 向上显示缓存命令 Ctrl+n 向下显示缓存命令 Ctrl+d 关闭终端 Ctrl+xx 在EOL和当前光标位置移动 Ctrl+x@ 显示可能hostname补全 Ctrl+c 终止进程/命令 Shift+上或下 终端上下滚动 Shift+PgUp/PgDn 终端上下翻页滚动 Ctrl+Shift+n 新终端 alt+F2 输入gnome-terminal打开终端 Shift+Ctrl+T 打开新的标签页 Shift+Ctrl+W 关闭标签页 Shift+Ctrl+C 复制 Shift+Ctrl+V 粘贴 Alt+数字 切换至对应的标签页 Shift+Ctrl+N 打开新的终端窗口 Shift+Ctrl+Q 管壁终端窗口 Shift+Ctrl+PgUp/PgDn 左移右移标签页 Ctrl+PgUp/PgDn 切换标签页 F1 打开帮助指南 F10 激活菜单栏 F11 全屏切换 Alt+F 打开 “文件” 菜单（file） Alt+E 打开 “编辑” 菜单（edit） Alt+V 打开 “查看” 菜单（view） Alt+S 打开 “搜索” 菜单（search） Alt+T 打开 “终端” 菜单（terminal） Alt+H 打开 “帮助” 菜单（help）]]></content>
       <categories>
         <category>Linux</category>
@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title><![CDATA[Ubuntu操作系统通过saltstack安装nginx]]></title>
-    <url>%2F2018%2F12%2F26%2Fsaltstack-install-nginx%2F</url>
+    <url>%2Fsaltstack-install-nginx.html</url>
     <content type="text"><![CDATA[Quick Start新建nginx的state.sls文件12345678910nginx: pkgrepo.managed: - name: deb http://nginx.org/packages/ubuntu/ &#123;&#123;grains[&apos;oscodename&apos;]&#125;&#125; nginx - key_url: http://nginx.org/keys/nginx_signing.key - refresh_db: true - require_in: - pkg: nginx pkg.installed: - name: nginx 测试运行结果123456789101112131415161718192021222324252627salt &apos;*&apos; state.sls nginx test=Trueminion1:---------- ID: nginx Function: pkgrepo.managed Name: deb http://nginx.org/packages/ubuntu/ xenial nginx Result: None Comment: Package repo &apos;deb http://nginx.org/packages/ubuntu/ xenial nginx&apos; will be configured. This may cause pkg states to behave differently than stated if this action is repeated without test=True, due to the differences in the configured repositories. Started: 23:49:18.727125 Duration: 96.173 ms Changes:---------- ID: nginx Function: pkg.installed Result: None Comment: The following packages would be installed/updated: nginx Started: 23:49:22.886030 Duration: 3786.682 ms Changes:Summary for minion1------------Succeeded: 2 (unchanged=2)Failed: 0------------Total states run: 2Total run time: 3.883 s]]></content>
       <categories>
         <category>saltstack</category>
@@ -36,7 +36,7 @@
   </entry>
   <entry>
     <title><![CDATA[Ubuntu操作系统通过saltstack安装docker]]></title>
-    <url>%2F2018%2F12%2F25%2Fsaltstack-install-docker%2F</url>
+    <url>%2Fsaltstack-install-docker.html</url>
     <content type="text"><![CDATA[Quick StartDocker是一个开源的应用容器引擎，基于Go语言并遵从Apache2.0协议开源，源代码部署在GitHub上，现已被广泛使用。常规情况下，Docker作为基础组件打在os的镜像里，对于后期加入管理的主机可通过saltstack进行批量安装。 新建docker的state.sls文件12345678910111213141516171819202122repository: pkg.installed: - pkgs: - apt-transport-https - curl - ca-certificates - software-properties-common - refresh: Truedocker-ce: pkgrepo.managed: - name: deb [arch=amd64] https://download.docker.com/linux/ubuntu &#123;&#123;grains[&apos;oscodename&apos;]&#125;&#125; stable - key_url: https://download.docker.com/linux/ubuntu/gpg - refresh_db: true - require: - pkg: repository - require_in: - pkg: docker-ce pkg.installed: - name: docker-ce - refresh: True 测试执行结果1234567891011121314151617181920212223242526272829303132333435salt &apos;*&apos; state.sls docker test=Trueminion1:---------- ID: repository Function: pkg.installed Result: None Comment: The following packages would be installed/updated: software-properties-common, apt-transport-https Started: 23:30:54.553191 Duration: 3797.25 ms Changes:---------- ID: docker-ce Function: pkgrepo.managed Name: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable Result: None Comment: Package repo &apos;deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable&apos; will be configured. This may cause pkg states to behave differently than stated if this action is repeated without test=True, due to the differences in the configured repositories. Started: 23:30:58.355189 Duration: 114.982 ms Changes:---------- ID: docker-ce Function: pkg.installed Result: None Comment: The following packages would be installed/updated: docker-ce Started: 23:30:58.470868 Duration: 56.745 ms Changes:Summary for minion1------------Succeeded: 3 (unchanged=3)Failed: 0------------Total states run: 3Total run time: 3.969 s]]></content>
       <categories>
         <category>saltstack</category>
@@ -48,7 +48,7 @@
   </entry>
   <entry>
     <title><![CDATA[yum install nginx]]></title>
-    <url>%2F2018%2F12%2F25%2Fyum-install-nginx%2F</url>
+    <url>%2Fyum-install-nginx.html</url>
     <content type="text"><![CDATA[Quick Start新增nginx.repo文件cat /etc/yum.repos.d/nginx.repo12345[nginx]name=nginx repobaseurl=http://nginx.org/packages/centos/$releasever/$basearch/gpgcheck=0enabled=1 安装nginx1yum install nginx]]></content>
       <categories>
         <category>nginx</category>
@@ -59,7 +59,7 @@
   </entry>
   <entry>
     <title><![CDATA[Linux设置默认编辑器]]></title>
-    <url>%2F2018%2F12%2F25%2FLinux-Set-Default-Editor%2F</url>
+    <url>%2FLinux-Set-Default-Editor.html</url>
     <content type="text"><![CDATA[Quick StartLinux设置默认编辑器为vi在使用edquota编辑限额时出现错误：1edquota: cannot exec /usr/bin/editor 根据错误提示，edquota命令没有找到可用的编辑器，于是设置系统默认的编辑器。在linux 中设置默认编辑器为vi1export EDITOR=vi]]></content>
       <categories>
         <category>Linux</category>
@@ -71,7 +71,7 @@
   </entry>
   <entry>
     <title><![CDATA[Linux查看操作系统版本]]></title>
-    <url>%2F2018%2F12%2F25%2FLinux-Get-OS-Release%2F</url>
+    <url>%2FLinux-Get-OS-Release.html</url>
     <content type="text"><![CDATA[Quick StartUbuntulsb_release -a12345No LSB modules are available.Distributor ID: UbuntuDescription: Ubuntu 14.04.1 LTSRelease: 14.04Codename: trusty Centos方法一cat /etc/issue12CentOS release 6.8 (Final)Kernel \r on an \m 方法二cat /etc/redhat-release1CentOS release 6.8 (Final)]]></content>
       <categories>
         <category>Linux</category>
@@ -82,7 +82,7 @@
   </entry>
   <entry>
     <title><![CDATA[apt-get install JDK8]]></title>
-    <url>%2F2018%2F12%2F25%2Fapt-get-install-JDK8%2F</url>
+    <url>%2Fapt-get-install-JDK8.html</url>
     <content type="text"><![CDATA[Quick Start安装python-software-properties12sudo apt-get install python-software-propertiessudo apt-get install software-properties-common 首先添加ppa1sudo add-apt-repository ppa:webupd8team/java 然后更新系统1sudo apt-get update 最后开始安装12345sudo apt-get install oracle-java8-installerjava -versionjava version “1.8.0_05&quot;Java(TM) SE Runtime Environment (build 1.8.0_05-b13) Java HotSpot(TM) Server VM (build 25.5-b02, mixed mode) java版本切换1sudo update-java-alternatives -s java-8-oracle]]></content>
       <categories>
         <category>java</category>
@@ -94,7 +94,7 @@
   </entry>
   <entry>
     <title><![CDATA[阿里云yum仓库镜像安装kubernetes]]></title>
-    <url>%2F2018%2F12%2F25%2Faliyum-install-kubernetes%2F</url>
+    <url>%2Faliyum-install-kubernetes.html</url>
     <content type="text"><![CDATA[Quick Start安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。注意不要开启check。 12345678910cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo[kubernetes]name=Kubernetesbaseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64enabled=1gpgcheck=0repo_gpgcheck=0gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpgEOF]]></content>
       <categories>
         <category>Kubernetes</category>
@@ -105,7 +105,7 @@
   </entry>
   <entry>
     <title><![CDATA[mac install Kubernetes]]></title>
-    <url>%2F2018%2F12%2F24%2Fmac-install-Kubernetes%2F</url>
+    <url>%2Fmac-install-Kubernetes.html</url>
     <content type="text"><![CDATA[Quick Start解决mac docker启动不了Kubernetes的问题docker for mac edge版新增了Kubernetes功能。但由于墙的问题，启动Kubernetes时，一直显示Kubernetes is starting.解决方法参考：https://github.com/maguowei/k8s-docker-for-mac docker版本： 先安装以上EDGE版如已安装，恢复出厂设置，参考docker官方文档。 配置本地私服Registry mirrors里增加http://registry.docker-cn.com， 注意不要用https，否则会提示证书错误 打开命令行工具，执行123git clone https://github.com/maguowei/k8s-docker-for-mac.gitcd k8s-docker-for-mac/./load_images.sh 按下图打勾，勾选k8s]]></content>
       <categories>
         <category>Kubernetes</category>
@@ -116,7 +116,7 @@
   </entry>
   <entry>
     <title><![CDATA[Ubuntu 16.04 install mysql5.7]]></title>
-    <url>%2F2018%2F12%2F18%2FUbuntu-16-04-install-mysql5-7%2F</url>
+    <url>%2FUbuntu-16-04-install-mysql5-7.html</url>
     <content type="text"><![CDATA[Quick Start在Ubuntu 16.04版本的mysql数据库，默认是5.7版本的；123sudo apt-get updatesudo apt-get install mysql-server sudo mysql_secure_installation 更改数据库存储目录想要修改MySQL数据库存储的目录，需要了解mysql配置文件，以及apparmor的配置文件,这里提一下apparnor 是控制访问权限的，而mysql依赖它，所以不单单是改完mysql配置文件的内容，同样的需要修改apparmor的相应的配置文件。 创建MySQL另外存储的目录123mkdir /database/mysqlchmod 700 /database/mysqlchowd mysql:mysq /database/mysql 将以前的数据库复制到新的存储目录这样避免了再次初始化，并且数据还在1cp -av /var/lib/mysql/* /database/mysql 删除日志不删除会报错12rm -rf /database/mysql/ib_logfile0rm -rf /database/mysql/ib_logfile1 修改my.cnf12vim /etc/mysql/my.cnf 修改datadir=/var/lib/mysql 为你需要修改的目录 这里是 datadir=/database/mysql 修改apparmor的配置文件1234567vim /etc/apparmor/usr.sbin.mysqld将 /var/lib/mysql/ r, /var/lib/mysql/** rwk,修改为 /database/mysql/ r, /database/mysql/** rwk, reload apparmor的配置并重启这里不要停止apparmor服务，因为我在测试的时候关闭以后修改配置文件后反到是不成功， 直接修改后reload 然后重启12service apparmor reload service apparmor restart 重启mysql1service mysql restart 验证mysql的目录是否已经更改12进入mysql 命令行,执行：show variables like &apos;%datadir%’; 如果启动不了， 查看/var/log/mysql/error.log如果出现： InnoDB: The innodb_system data file ‘ibdata1’ must be writable 请仔细核对第5步，第6步如果出现启动成功，但是测试新建数据库还是在原来的目录， 试试重启服务器，或者仔细查看mysql配置文件，提醒一下 并不需要更改/usr/share/mysql/mysql-systemd-start 脚本中的datadir变量]]></content>
       <categories>
         <category>mysql</category>
@@ -127,7 +127,7 @@
   </entry>
   <entry>
     <title><![CDATA[zabbix-sender使用场景]]></title>
-    <url>%2F2018%2F12%2F12%2Fzabbix-sender%2F</url>
+    <url>%2Fzabbix-sender.html</url>
     <content type="text"><![CDATA[Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用： 执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sender可以一次性上报多条结果，减少调用次数。 执行后数据有逻辑关和严谨性的，必须改成让客户端提交数据的方式，如取同一时刻的生产量和消耗量。 zabbix_sender命令详解语法： usage: zabbix_sender [-Vhv] {[-zpsI] -ko | [-zpI] -T -i &lt;file&gt; -r} [-c &lt;file&gt;] 使用参数： 1234567891011-c --config &lt;file&gt; 配置文件绝对路径-z --zabbix-server &lt;server&gt; zabbix server的IP地址-p --port &lt;server port&gt; zabbix server端口.默认10051-s --host &lt;hostname&gt; 主机名，zabbix里面配置的主机名（不是服务器的hostname），不能使用ip地址-I --source-address &lt;IP address&gt; 源IP-k --key &lt;key&gt; 监控项的key-o --value &lt;key value&gt; key值-i --input-file &lt;input file&gt; 从文件里面读取hostname、key、value 一行为一条数据，使用空格作为分隔符，如果主机名带空格，那么请使用双引号包起来-T --with-timestamps 一行一条数据，空格作为分隔符: &lt;hostname&gt; &lt;key&gt; &lt;timestamp&gt; &lt;value&gt;，配合 --input-file option，timestamp为unix时间戳-r --real-time 将数据实时提交给服务器-v --verbose 详细模式, -vv 更详细 zabbix_sender使用实例客户端主机为RedisServer，服务端IP为192.168.1.2，redis info 得到信息如下： 123456789……＃Clientsconnected_clients:2129client_longest_output_list:0client_biggest_input_buf:0blocked_clients:6…… 我们把clients的信息上传给zabbix server，zabbix item配置如下(其它值默认)： redis connected_clients: 1234567type: Zabbix trapperKey: redis.info[connected_clients]Type of information: Numberic (unsigned)Data type: Decimal redis client_longest_output_list: 1234567type: Zabbix trapperKey: redis.info[client_longest_output_list]Type of information: Numberic (unsigned)Data type: Decimal redis client_biggest_input_buf: 1234567type: Zabbix trapperKey: redis.info[client_biggest_input_buf]Type of information: Numberic (unsigned)Data type: Decimal redis blocked_clients: 1234567type: Zabbix trapperKey: redis.info[blocked_clients]Type of information: Numberic (unsigned)Data type: Decimal 1､ 提交单条数据： 1234zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[connected_clients]&quot; -o 2129 -r`zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[client_longest_output_list]&quot; -o 0 -r`zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[client_biggest_input_buf]&quot; -o 0 -r`zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[blocked_clients]&quot; -o 6 -r` 2、 指量提交数据： 123456789＃ cat redis_info.txt&quot;RedisServer&quot; &quot;redis.info[connected_clients]&quot; 2129&quot;RedisServer&quot; &quot;redis.info[client_longest_output_list]&quot; 0&quot;RedisServer&quot; &quot;redis.info[client_biggest_input_buf]&quot; 0&quot;RedisServer&quot; &quot;redis.info[blocked_clients]&quot; 6zabbix_sender -z 192.168.1.2 -i redis_info.txtinfo from server: &quot;processed: 4; failed: 0; total: 4; seconds spent: 0.000085&quot;sent: 4; skipped: 0; total: 4]]></content>
       <categories>
         <category>zabbix</category>

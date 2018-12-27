@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="saltstack,nginx,">
+  <meta name="keywords" content="Kubernetes,">
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="Quick Start新建nginx的state.sls文件12345678910nginx:  pkgrepo.managed:    - name: deb http://nginx.org/packages/ubuntu/ &amp;#123;&amp;#123;grains[&amp;apos;oscodename&amp;apos;]&amp;#125;&amp;#125; nginx    - key_url: http://ngi">
-<meta name="keywords" content="saltstack,nginx">
+<meta name="description" content="Quick Start解决mac docker启动不了Kubernetes的问题docker for mac edge版新增了Kubernetes功能。但由于墙的问题，启动Kubernetes时，一直显示Kubernetes is starting.解决方法参考：https://github.com/maguowei/k8s-docker-for-mac">
+<meta name="keywords" content="Kubernetes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu操作系统通过saltstack安装nginx">
-<meta property="og:url" content="https://cabbin.github.io/2018/12/26/saltstack-install-nginx/index.html">
+<meta property="og:title" content="mac install Kubernetes">
+<meta property="og:url" content="https://www.oaascloud.com/mac-install-Kubernetes.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="Quick Start新建nginx的state.sls文件12345678910nginx:  pkgrepo.managed:    - name: deb http://nginx.org/packages/ubuntu/ &amp;#123;&amp;#123;grains[&amp;apos;oscodename&amp;apos;]&amp;#125;&amp;#125; nginx    - key_url: http://ngi">
+<meta property="og:description" content="Quick Start解决mac docker启动不了Kubernetes的问题docker for mac edge版新增了Kubernetes功能。但由于墙的问题，启动Kubernetes时，一直显示Kubernetes is starting.解决方法参考：https://github.com/maguowei/k8s-docker-for-mac">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-25T23:54:11.199Z">
+<meta property="og:image" content="https://www.oaascloud.com/mac-install-Kubernetes/DockerVersion.png">
+<meta property="og:image" content="https://www.oaascloud.com/mac-install-Kubernetes/Daemon.png">
+<meta property="og:image" content="https://www.oaascloud.com/mac-install-Kubernetes/Kubernetes.png">
+<meta property="og:updated_time" content="2018-12-26T03:25:53.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu操作系统通过saltstack安装nginx">
-<meta name="twitter:description" content="Quick Start新建nginx的state.sls文件12345678910nginx:  pkgrepo.managed:    - name: deb http://nginx.org/packages/ubuntu/ &amp;#123;&amp;#123;grains[&amp;apos;oscodename&amp;apos;]&amp;#125;&amp;#125; nginx    - key_url: http://ngi">
+<meta name="twitter:title" content="mac install Kubernetes">
+<meta name="twitter:description" content="Quick Start解决mac docker启动不了Kubernetes的问题docker for mac edge版新增了Kubernetes功能。但由于墙的问题，启动Kubernetes时，一直显示Kubernetes is starting.解决方法参考：https://github.com/maguowei/k8s-docker-for-mac">
+<meta name="twitter:image" content="https://www.oaascloud.com/mac-install-Kubernetes/DockerVersion.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://cabbin.github.io/2018/12/26/saltstack-install-nginx/">
+  <link rel="canonical" href="https://www.oaascloud.com/mac-install-Kubernetes.html">
 
 
 
 
 
-  <title>Ubuntu操作系统通过saltstack安装nginx | Ops as a Service</title>
+  <title>mac install Kubernetes | Ops as a Service</title>
   
 
 
@@ -295,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cabbin.github.io/2018/12/26/saltstack-install-nginx/">
+    <link itemprop="mainEntityOfPage" href="https://www.oaascloud.com/mac-install-Kubernetes.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cabbin">
@@ -312,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu操作系统通过saltstack安装nginx</h1>
+          <h1 class="post-title" itemprop="name headline">mac install Kubernetes</h1>
         
 
         <div class="post-meta">
@@ -324,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-26T07:50:35+08:00">
-                2018-12-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-24T23:24:49+08:00">
+                2018-12-24
               </time>
             
 
@@ -347,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/saltstack/" itemprop="url" rel="index">
-                    <span itemprop="name">saltstack</span>
+                  <a href="/categories/Kubernetes/" itemprop="url" rel="index">
+                    <span itemprop="name">Kubernetes</span>
                   </a>
                 </span>
 
@@ -384,9 +388,12 @@
       
 
       
-        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="新建nginx的state-sls文件"><a href="#新建nginx的state-sls文件" class="headerlink" title="新建nginx的state.sls文件"></a>新建nginx的state.sls文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">nginx:</span><br><span class="line">  pkgrepo.managed:</span><br><span class="line">    - name: deb http://nginx.org/packages/ubuntu/ &#123;&#123;grains[&apos;oscodename&apos;]&#125;&#125; nginx</span><br><span class="line">    - key_url: http://nginx.org/keys/nginx_signing.key</span><br><span class="line">    - refresh_db: true</span><br><span class="line">    - require_in:</span><br><span class="line">      - pkg: nginx</span><br><span class="line"></span><br><span class="line">  pkg.installed:</span><br><span class="line">    - name: nginx</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h4 id="测试运行结果"><a href="#测试运行结果" class="headerlink" title="测试运行结果"></a>测试运行结果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">salt &apos;*&apos; state.sls nginx test=True</span><br><span class="line">minion1:</span><br><span class="line">----------</span><br><span class="line">          ID: nginx</span><br><span class="line">    Function: pkgrepo.managed</span><br><span class="line">        Name: deb http://nginx.org/packages/ubuntu/ xenial nginx</span><br><span class="line">      Result: None</span><br><span class="line">     Comment: Package repo &apos;deb http://nginx.org/packages/ubuntu/ xenial nginx&apos; will be configured. This may cause pkg states to behave differently than stated if this action is repeated without test=True, due to the differences in the configured repositories.</span><br><span class="line">     Started: 23:49:18.727125</span><br><span class="line">    Duration: 96.173 ms</span><br><span class="line">     Changes:</span><br><span class="line">----------</span><br><span class="line">          ID: nginx</span><br><span class="line">    Function: pkg.installed</span><br><span class="line">      Result: None</span><br><span class="line">     Comment: The following packages would be installed/updated: nginx</span><br><span class="line">     Started: 23:49:22.886030</span><br><span class="line">    Duration: 3786.682 ms</span><br><span class="line">     Changes:</span><br><span class="line"></span><br><span class="line">Summary for minion1</span><br><span class="line">------------</span><br><span class="line">Succeeded: 2 (unchanged=2)</span><br><span class="line">Failed:    0</span><br><span class="line">------------</span><br><span class="line">Total states run:     2</span><br><span class="line">Total run time:   3.883 s</span><br></pre></td></tr></table></figure>
+        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>解决mac docker启动不了Kubernetes的问题<br>docker for mac edge版新增了Kubernetes功能。但由于墙的问题，启动Kubernetes时，一直显示Kubernetes is starting.<br>解决方法参考：<a href="https://github.com/maguowei/k8s-docker-for-mac" target="_blank" rel="noopener">https://github.com/maguowei/k8s-docker-for-mac</a><br><a id="more"></a></p>
+<h4 id="docker版本："><a href="#docker版本：" class="headerlink" title="docker版本："></a>docker版本：</h4><p><img src="/mac-install-Kubernetes/DockerVersion.png" alt="Docker版本">   </p>
+<h4 id="先安装以上EDGE版"><a href="#先安装以上EDGE版" class="headerlink" title="先安装以上EDGE版"></a>先安装以上EDGE版</h4><p>如已安装，恢复出厂设置，参考docker官方文档。</p>
+<h4 id="配置本地私服"><a href="#配置本地私服" class="headerlink" title="配置本地私服"></a>配置本地私服</h4><p>Registry mirrors里增加<a href="http://registry.docker-cn.com，" target="_blank" rel="noopener">http://registry.docker-cn.com，</a> <font color="red">注意不要用https，否则会提示证书错误</font><br><img src="/mac-install-Kubernetes/Daemon.png" alt="Daemon"></p>
+<h4 id="打开命令行工具，执行"><a href="#打开命令行工具，执行" class="headerlink" title="打开命令行工具，执行"></a>打开命令行工具，执行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/maguowei/k8s-docker-for-mac.git</span><br><span class="line">cd k8s-docker-for-mac/</span><br><span class="line">./load_images.sh</span><br></pre></td></tr></table></figure>
+<h4 id="按下图打勾，勾选k8s"><a href="#按下图打勾，勾选k8s" class="headerlink" title="按下图打勾，勾选k8s"></a>按下图打勾，勾选k8s</h4><p><img src="/mac-install-Kubernetes/Kubernetes.png" alt="Kubernetes"></p>
 
       
     </div>
@@ -404,9 +411,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/saltstack/" rel="tag"># saltstack</a>
-          
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/Kubernetes/" rel="tag"># Kubernetes</a>
           
         </div>
       
@@ -419,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/25/saltstack-install-docker/" rel="next" title="Ubuntu操作系统通过saltstack安装docker">
-                <i class="fa fa-chevron-left"></i> Ubuntu操作系统通过saltstack安装docker
+              <a href="/Ubuntu-16-04-install-mysql5-7.html" rel="next" title="Ubuntu 16.04 install mysql5.7">
+                <i class="fa fa-chevron-left"></i> Ubuntu 16.04 install mysql5.7
               </a>
             
           </div>
@@ -429,8 +434,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/26/Terminal-Shortcut-keys/" rel="prev" title="Linux终端常用的快捷键">
-                Linux终端常用的快捷键 <i class="fa fa-chevron-right"></i>
+              <a href="/aliyum-install-kubernetes.html" rel="prev" title="阿里云yum仓库镜像安装kubernetes">
+                阿里云yum仓库镜像安装kubernetes <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -563,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建nginx的state-sls文件"><span class="nav-number">1.1.</span> <span class="nav-text">新建nginx的state.sls文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试运行结果"><span class="nav-number">1.2.</span> <span class="nav-text">测试运行结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#docker版本："><span class="nav-number">1.1.</span> <span class="nav-text">docker版本：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#先安装以上EDGE版"><span class="nav-number">1.2.</span> <span class="nav-text">先安装以上EDGE版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置本地私服"><span class="nav-number">1.3.</span> <span class="nav-text">配置本地私服</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打开命令行工具，执行"><span class="nav-number">1.4.</span> <span class="nav-text">打开命令行工具，执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按下图打勾，勾选k8s"><span class="nav-number">1.5.</span> <span class="nav-text">按下图打勾，勾选k8s</span></a></li></ol></li></ol></div>
             
 
           </div>

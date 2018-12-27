@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="zabbix,">
+  <meta name="keywords" content="vim,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
-<meta name="keywords" content="zabbix">
+<meta name="description" content="Quick Start打开多个文件 vim还没有启动的时候:12在终端里直接打开所有想要打开的文件vim file1 file2 ... filen">
+<meta name="keywords" content="vim">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zabbix-sender使用场景">
-<meta property="og:url" content="https://cabbin.github.io/2018/12/12/zabbix-sender/index.html">
+<meta property="og:title" content="vim多文件之间的切换">
+<meta property="og:url" content="https://www.oaascloud.com/vim-multiple-files.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
+<meta property="og:description" content="Quick Start打开多个文件 vim还没有启动的时候:12在终端里直接打开所有想要打开的文件vim file1 file2 ... filen">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-24T16:35:34.089Z">
+<meta property="og:updated_time" content="2018-12-27T00:02:43.040Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zabbix-sender使用场景">
-<meta name="twitter:description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
+<meta name="twitter:title" content="vim多文件之间的切换">
+<meta name="twitter:description" content="Quick Start打开多个文件 vim还没有启动的时候:12在终端里直接打开所有想要打开的文件vim file1 file2 ... filen">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://cabbin.github.io/2018/12/12/zabbix-sender/">
+  <link rel="canonical" href="https://www.oaascloud.com/vim-multiple-files.html">
 
 
 
 
 
-  <title>zabbix-sender使用场景 | Ops as a Service</title>
+  <title>vim多文件之间的切换 | Ops as a Service</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cabbin.github.io/2018/12/12/zabbix-sender/">
+    <link itemprop="mainEntityOfPage" href="https://www.oaascloud.com/vim-multiple-files.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cabbin">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">zabbix-sender使用场景</h1>
+          <h1 class="post-title" itemprop="name headline">vim多文件之间的切换</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-12T02:28:20+08:00">
-                2018-12-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-27T07:43:46+08:00">
+                2018-12-27
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/zabbix/" itemprop="url" rel="index">
-                    <span itemprop="name">zabbix</span>
+                  <a href="/categories/vim/" itemprop="url" rel="index">
+                    <span itemprop="name">vim</span>
                   </a>
                 </span>
 
@@ -384,32 +384,27 @@
       
 
       
-        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：</p>
-<ol>
-<li>执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。</li>
-<li>客户端脚本一次执行得到多项采集数据时，通过zabbix_sender可以一次性上报多条结果，减少调用次数。</li>
-<li>执行后数据有逻辑关和严谨性的，必须改成让客户端提交数据的方式，如取同一时刻的生产量和消耗量。</li>
+        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h4><ol>
+<li>vim还没有启动的时候:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在终端里直接打开所有想要打开的文件</span><br><span class="line">vim file1 file2 ... filen</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <a id="more"></a>
-<h4 id="zabbix-sender命令详解"><a href="#zabbix-sender命令详解" class="headerlink" title="zabbix_sender命令详解"></a>zabbix_sender命令详解</h4><p>语法：</p>
-<p><code>usage: zabbix_sender [-Vhv] {[-zpsI] -ko | [-zpI] -T -i &lt;file&gt; -r} [-c &lt;file&gt;]</code></p>
-<p>使用参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-c --config &lt;file&gt;                   配置文件绝对路径</span><br><span class="line">-z --zabbix-server &lt;server&gt;          zabbix server的IP地址</span><br><span class="line">-p --port &lt;server port&gt;              zabbix server端口.默认10051</span><br><span class="line">-s --host &lt;hostname&gt;                 主机名，zabbix里面配置的主机名（不是服务器的hostname），不能使用ip地址</span><br><span class="line">-I --source-address &lt;IP address&gt;     源IP</span><br><span class="line">-k --key &lt;key&gt;                       监控项的key</span><br><span class="line">-o --value &lt;key value&gt;               key值</span><br><span class="line">-i --input-file &lt;input file&gt;         从文件里面读取hostname、key、value 一行为一条数据，使用空格作为分隔符，如果主机名带空格，那么请使用双引号包起来</span><br><span class="line">-T --with-timestamps                 一行一条数据，空格作为分隔符: &lt;hostname&gt; &lt;key&gt; &lt;timestamp&gt; &lt;value&gt;，配合 --input-file option，timestamp为unix时间戳</span><br><span class="line">-r --real-time                       将数据实时提交给服务器</span><br><span class="line">-v --verbose                         详细模式, -vv 更详细</span><br></pre></td></tr></table></figure>
-<h4 id="zabbix-sender使用实例"><a href="#zabbix-sender使用实例" class="headerlink" title="zabbix_sender使用实例"></a>zabbix_sender使用实例</h4><p>客户端主机为RedisServer，服务端IP为192.168.1.2，redis info 得到信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">……</span><br><span class="line"></span><br><span class="line">＃Clients</span><br><span class="line">connected_clients:2129</span><br><span class="line">client_longest_output_list:0</span><br><span class="line">client_biggest_input_buf:0</span><br><span class="line">blocked_clients:6</span><br><span class="line"></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-<p>我们把clients的信息上传给zabbix server，zabbix item配置如下(其它值默认)：</p>
-<p>redis connected_clients:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">type: Zabbix trapper</span><br><span class="line"></span><br><span class="line">Key: redis.info[connected_clients]</span><br><span class="line"></span><br><span class="line">Type of information: Numberic (unsigned)</span><br><span class="line"></span><br><span class="line">Data type: Decimal</span><br></pre></td></tr></table></figure>
-<p>redis client_longest_output_list:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">type: Zabbix trapper</span><br><span class="line"></span><br><span class="line">Key: redis.info[client_longest_output_list]</span><br><span class="line"></span><br><span class="line">Type of information: Numberic (unsigned)</span><br><span class="line"></span><br><span class="line">Data type: Decimal</span><br></pre></td></tr></table></figure>
-<p>redis client_biggest_input_buf:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">type: Zabbix trapper</span><br><span class="line"></span><br><span class="line">Key: redis.info[client_biggest_input_buf]</span><br><span class="line"></span><br><span class="line">Type of information: Numberic (unsigned)</span><br><span class="line"></span><br><span class="line">Data type: Decimal</span><br></pre></td></tr></table></figure>
-<p>redis blocked_clients:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">type: Zabbix trapper</span><br><span class="line"></span><br><span class="line">Key: redis.info[blocked_clients]</span><br><span class="line"></span><br><span class="line">Type of information: Numberic (unsigned)</span><br><span class="line"></span><br><span class="line">Data type: Decimal</span><br></pre></td></tr></table></figure>
-<p>1､ 提交单条数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[connected_clients]&quot; -o 2129 -r`</span><br><span class="line">zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[client_longest_output_list]&quot; -o 0 -r`</span><br><span class="line">zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[client_biggest_input_buf]&quot; -o 0 -r`</span><br><span class="line">zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[blocked_clients]&quot; -o 6 -r`</span><br></pre></td></tr></table></figure>
-<p>2、 指量提交数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">＃ cat redis_info.txt</span><br><span class="line">&quot;RedisServer&quot; &quot;redis.info[connected_clients]&quot; 2129</span><br><span class="line">&quot;RedisServer&quot; &quot;redis.info[client_longest_output_list]&quot; 0</span><br><span class="line">&quot;RedisServer&quot; &quot;redis.info[client_biggest_input_buf]&quot; 0</span><br><span class="line">&quot;RedisServer&quot; &quot;redis.info[blocked_clients]&quot; 6</span><br><span class="line"></span><br><span class="line">zabbix_sender -z 192.168.1.2 -i redis_info.txt</span><br><span class="line">info from server: &quot;processed: 4; failed: 0; total: 4; seconds spent: 0.000085&quot;</span><br><span class="line">sent: 4; skipped: 0; total: 4</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>vim启动打开多个文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在编辑模式输入</span><br><span class="line">:e file</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同时显示多个文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:sp         //水平切分窗口</span><br><span class="line">:vsplit    //垂直切分窗口</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="在文件之间切换"><a href="#在文件之间切换" class="headerlink" title="在文件之间切换"></a>在文件之间切换</h4><ol>
+<li><p>一个文件切换到其他文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+6  //两文件间的切换</span><br><span class="line">:bn      //下一个文件</span><br><span class="line">:bp      //上一个文件</span><br><span class="line">:ls       //列出打开的文件，带编号</span><br><span class="line">:b1~n  //切换至第n个文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在窗格间切换的方法<br>对于用(v)split在多个窗格中打开的文件，这种方法只会在当前窗格中切换不同的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+w+方向键——切换到前／下／上／后一个窗格</span><br><span class="line">Ctrl+w+h/j/k/l ——同上</span><br><span class="line">Ctrl+ww——依次向后切换到下一个窗格中</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -427,7 +422,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/zabbix/" rel="tag"># zabbix</a>
+            <a href="/tags/vim/" rel="tag"># vim</a>
           
         </div>
       
@@ -440,15 +435,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/Terminal-Shortcut-keys.html" rel="next" title="Linux终端常用的快捷键">
+                <i class="fa fa-chevron-left"></i> Linux终端常用的快捷键
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/18/Ubuntu-16-04-install-mysql5-7/" rel="prev" title="Ubuntu 16.04 install mysql5.7">
-                Ubuntu 16.04 install mysql5.7 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#zabbix-sender命令详解"><span class="nav-number">1.1.</span> <span class="nav-text">zabbix_sender命令详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zabbix-sender使用实例"><span class="nav-number">1.2.</span> <span class="nav-text">zabbix_sender使用实例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开多个文件"><span class="nav-number">1.1.</span> <span class="nav-text">打开多个文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在文件之间切换"><span class="nav-number">1.2.</span> <span class="nav-text">在文件之间切换</span></a></li></ol></li></ol></div>
             
 
           </div>

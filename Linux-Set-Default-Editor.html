@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vim,">
+  <meta name="keywords" content="Linux,vi,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Quick Start打开多个文件 vim还没有启动的时候:12在终端里直接打开所有想要打开的文件vim file1 file2 ... filen">
-<meta name="keywords" content="vim">
+<meta name="description" content="Quick StartLinux设置默认编辑器为vi在使用edquota编辑限额时出现错误：1edquota: cannot exec /usr/bin/editor">
+<meta name="keywords" content="Linux,vi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vim multiple files">
-<meta property="og:url" content="https://cabbin.github.io/2018/12/27/vim-multiple-files/index.html">
+<meta property="og:title" content="Linux设置默认编辑器">
+<meta property="og:url" content="https://www.oaascloud.com/Linux-Set-Default-Editor.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="Quick Start打开多个文件 vim还没有启动的时候:12在终端里直接打开所有想要打开的文件vim file1 file2 ... filen">
+<meta property="og:description" content="Quick StartLinux设置默认编辑器为vi在使用edquota编辑限额时出现错误：1edquota: cannot exec /usr/bin/editor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-26T23:59:53.778Z">
+<meta property="og:updated_time" content="2018-12-25T09:11:52.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vim multiple files">
-<meta name="twitter:description" content="Quick Start打开多个文件 vim还没有启动的时候:12在终端里直接打开所有想要打开的文件vim file1 file2 ... filen">
+<meta name="twitter:title" content="Linux设置默认编辑器">
+<meta name="twitter:description" content="Quick StartLinux设置默认编辑器为vi在使用edquota编辑限额时出现错误：1edquota: cannot exec /usr/bin/editor">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://cabbin.github.io/2018/12/27/vim-multiple-files/">
+  <link rel="canonical" href="https://www.oaascloud.com/Linux-Set-Default-Editor.html">
 
 
 
 
 
-  <title>vim multiple files | Ops as a Service</title>
+  <title>Linux设置默认编辑器 | Ops as a Service</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cabbin.github.io/2018/12/27/vim-multiple-files/">
+    <link itemprop="mainEntityOfPage" href="https://www.oaascloud.com/Linux-Set-Default-Editor.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cabbin">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vim multiple files</h1>
+          <h1 class="post-title" itemprop="name headline">Linux设置默认编辑器</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-27T07:43:46+08:00">
-                2018-12-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T17:08:58+08:00">
+                2018-12-25
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/vim/" itemprop="url" rel="index">
-                    <span itemprop="name">vim</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -384,27 +384,9 @@
       
 
       
-        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h4><ol>
-<li>vim还没有启动的时候:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在终端里直接打开所有想要打开的文件</span><br><span class="line">vim file1 file2 ... filen</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="Linux设置默认编辑器为vi"><a href="#Linux设置默认编辑器为vi" class="headerlink" title="Linux设置默认编辑器为vi"></a>Linux设置默认编辑器为vi</h4><p>在使用edquota编辑限额时出现错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">edquota: cannot exec /usr/bin/editor</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<ol start="2">
-<li><p>vim启动打开多个文件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在编辑模式输入</span><br><span class="line">:e file</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>同时显示多个文件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:sp         //水平切分窗口</span><br><span class="line">:vsplit    //垂直切分窗口</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="在文件之间切换"><a href="#在文件之间切换" class="headerlink" title="在文件之间切换"></a>在文件之间切换</h4><ol>
-<li><p>一个文件切换到其他文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+6  //两文件间的切换</span><br><span class="line">:bn      //下一个文件</span><br><span class="line">:bp      //上一个文件</span><br><span class="line">:ls       //列出打开的文件，带编号</span><br><span class="line">:b1~n  //切换至第n个文件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在窗格间切换的方法<br>对于用(v)split在多个窗格中打开的文件，这种方法只会在当前窗格中切换不同的文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+w+方向键——切换到前／下／上／后一个窗格</span><br><span class="line">Ctrl+w+h/j/k/l ——同上</span><br><span class="line">Ctrl+ww——依次向后切换到下一个窗格中</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>根据错误提示，edquota命令没有找到可用的编辑器，于是设置系统默认的编辑器。<br>在linux 中设置默认编辑器为vi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export EDITOR=vi</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -422,7 +404,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vim/" rel="tag"># vim</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/vi/" rel="tag"># vi</a>
           
         </div>
       
@@ -435,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/26/Terminal-Shortcut-keys/" rel="next" title="Linux终端常用的快捷键">
-                <i class="fa fa-chevron-left"></i> Linux终端常用的快捷键
+              <a href="/Linux-Get-OS-Release.html" rel="next" title="Linux查看操作系统版本">
+                <i class="fa fa-chevron-left"></i> Linux查看操作系统版本
               </a>
             
           </div>
@@ -444,6 +428,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/yum-install-nginx.html" rel="prev" title="yum install nginx">
+                yum install nginx <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -575,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开多个文件"><span class="nav-number">1.1.</span> <span class="nav-text">打开多个文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在文件之间切换"><span class="nav-number">1.2.</span> <span class="nav-text">在文件之间切换</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux设置默认编辑器为vi"><span class="nav-number">1.1.</span> <span class="nav-text">Linux设置默认编辑器为vi</span></a></li></ol></li></ol></div>
             
 
           </div>
