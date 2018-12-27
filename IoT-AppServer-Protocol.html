@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="zabbix,">
+  <meta name="keywords" content="IoT,物联网,">
 
 
 
@@ -79,18 +79,25 @@
 
 
 
-<meta name="description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
-<meta name="keywords" content="zabbix">
+<meta name="description" content="Quick StartMQTT协议MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）最早是IBM开发的一个即时通讯协议，MQTT协议是为大量计算能力有限且工作在低带宽、不可靠网络的远程传感器和控制设备通讯而设计的一种协议。MQTT协议的优势是可以支持所有平台，它几乎可以把所有的联网物品和互联网连接起来。">
+<meta name="keywords" content="IoT,物联网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zabbix-sender使用场景">
-<meta property="og:url" content="https://www.oaascloud.com/zabbix-sender.html">
+<meta property="og:title" content="物联网应用层协议选择和分析--MQTT、CoAP 、HTTP、XMPP、SoAP">
+<meta property="og:url" content="https://www.oaascloud.com/IoT-AppServer-Protocol.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
+<meta property="og:description" content="Quick StartMQTT协议MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）最早是IBM开发的一个即时通讯协议，MQTT协议是为大量计算能力有限且工作在低带宽、不可靠网络的远程传感器和控制设备通讯而设计的一种协议。MQTT协议的优势是可以支持所有平台，它几乎可以把所有的联网物品和互联网连接起来。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-24T16:35:34.089Z">
+<meta property="og:image" content="https://www.oaascloud.com/IoT-AppServer-Protocol/MQTT.jpg">
+<meta property="og:image" content="https://www.oaascloud.com/IoT-AppServer-Protocol/MQTT2.jpg">
+<meta property="og:image" content="https://www.oaascloud.com/IoT-AppServer-Protocol/CoAP.png">
+<meta property="og:image" content="https://www.oaascloud.com/IoT-AppServer-Protocol/HTTP.png">
+<meta property="og:image" content="https://www.oaascloud.com/IoT-AppServer-Protocol/HTTP2.png">
+<meta property="og:image" content="https://www.oaascloud.com/IoT-AppServer-Protocol/XMPP.png">
+<meta property="og:updated_time" content="2018-12-27T09:29:18.053Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zabbix-sender使用场景">
-<meta name="twitter:description" content="Quick Start使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：  执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。 客户端脚本一次执行得到多项采集数据时，通过zabbix_sende">
+<meta name="twitter:title" content="物联网应用层协议选择和分析--MQTT、CoAP 、HTTP、XMPP、SoAP">
+<meta name="twitter:description" content="Quick StartMQTT协议MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）最早是IBM开发的一个即时通讯协议，MQTT协议是为大量计算能力有限且工作在低带宽、不可靠网络的远程传感器和控制设备通讯而设计的一种协议。MQTT协议的优势是可以支持所有平台，它几乎可以把所有的联网物品和互联网连接起来。">
+<meta name="twitter:image" content="https://www.oaascloud.com/IoT-AppServer-Protocol/MQTT.jpg">
 
 
 
@@ -120,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://www.oaascloud.com/zabbix-sender.html">
+  <link rel="canonical" href="https://www.oaascloud.com/IoT-AppServer-Protocol.html">
 
 
 
 
 
-  <title>zabbix-sender使用场景 | Ops as a Service</title>
+  <title>物联网应用层协议选择和分析--MQTT、CoAP 、HTTP、XMPP、SoAP | Ops as a Service</title>
   
 
 
@@ -295,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.oaascloud.com/zabbix-sender.html">
+    <link itemprop="mainEntityOfPage" href="https://www.oaascloud.com/IoT-AppServer-Protocol.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cabbin">
@@ -312,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">zabbix-sender使用场景</h1>
+          <h1 class="post-title" itemprop="name headline">物联网应用层协议选择和分析--MQTT、CoAP 、HTTP、XMPP、SoAP</h1>
         
 
         <div class="post-meta">
@@ -324,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-12T02:28:20+08:00">
-                2018-12-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-27T16:08:16+08:00">
+                2018-12-27
               </time>
             
 
@@ -347,8 +354,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/zabbix/" itemprop="url" rel="index">
-                    <span itemprop="name">zabbix</span>
+                  <a href="/categories/IoT/" itemprop="url" rel="index">
+                    <span itemprop="name">IoT</span>
                   </a>
                 </span>
 
@@ -384,32 +391,74 @@
       
 
       
-        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><p>使用zabbix监控类型zabbix trapper，需要配合zabbix_sender给它传递数据，上报频率由客户端控制，通常用crontab来设置定时作业。一般情况下zabbix_sender会在以下几种场景使用：</p>
+        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="MQTT协议"><a href="#MQTT协议" class="headerlink" title="MQTT协议"></a>MQTT协议</h4><p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）最早是IBM开发的一个即时通讯协议，MQTT协议是为大量计算能力有限且工作在低带宽、不可靠网络的远程传感器和控制设备通讯而设计的一种协议。<br>MQTT协议的优势是可以支持所有平台，它几乎可以把所有的联网物品和互联网连接起来。<br><a id="more"></a><br>它具有以下主要的几项特性：</p>
 <ol>
-<li>执行超长时间脚本。这种情况下使用主动或被动模式都会超时，必须改成让客户端提交数据的方式。</li>
-<li>客户端脚本一次执行得到多项采集数据时，通过zabbix_sender可以一次性上报多条结果，减少调用次数。</li>
-<li>执行后数据有逻辑关和严谨性的，必须改成让客户端提交数据的方式，如取同一时刻的生产量和消耗量。</li>
+<li>使用发布/订阅消息模式，提供一对多的消息发布和应用程序之间的解耦；</li>
+<li>消息传输不需要知道负载内容；</li>
+<li>使用 TCP/IP 提供网络连接；</li>
+<li>有三种消息发布的服务质量：<br><code>QoS 0：“最多一次”，消息发布完全依赖底层 TCP/IP 网络。分发的消息可能丢失或重复。例如，这个等级可用于环境传感器数据，单次的数据丢失没关系，因为不久后还会有第二次发送。</code><br><code>QoS 1：“至少一次”，确保消息可以到达，但消息可能会重复。</code><br><code>QoS 2：“只有一次”，确保消息只到达一次。例如，这个等级可用在一个计费系统中，这里如果消息重复或丢失会导致不正确的收费。</code></li>
+<li>小型传输，开销很小（固定长度的头部是 2 字节），协议交换最小化，以降低网络流量；</li>
+<li>使用 Last Will 和 Testament 特性通知有关各方客户端异常中断的机制；</li>
 </ol>
-<a id="more"></a>
-<h4 id="zabbix-sender命令详解"><a href="#zabbix-sender命令详解" class="headerlink" title="zabbix_sender命令详解"></a>zabbix_sender命令详解</h4><p>语法：</p>
-<p><code>usage: zabbix_sender [-Vhv] {[-zpsI] -ko | [-zpI] -T -i &lt;file&gt; -r} [-c &lt;file&gt;]</code></p>
-<p>使用参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-c --config &lt;file&gt;                   配置文件绝对路径</span><br><span class="line">-z --zabbix-server &lt;server&gt;          zabbix server的IP地址</span><br><span class="line">-p --port &lt;server port&gt;              zabbix server端口.默认10051</span><br><span class="line">-s --host &lt;hostname&gt;                 主机名，zabbix里面配置的主机名（不是服务器的hostname），不能使用ip地址</span><br><span class="line">-I --source-address &lt;IP address&gt;     源IP</span><br><span class="line">-k --key &lt;key&gt;                       监控项的key</span><br><span class="line">-o --value &lt;key value&gt;               key值</span><br><span class="line">-i --input-file &lt;input file&gt;         从文件里面读取hostname、key、value 一行为一条数据，使用空格作为分隔符，如果主机名带空格，那么请使用双引号包起来</span><br><span class="line">-T --with-timestamps                 一行一条数据，空格作为分隔符: &lt;hostname&gt; &lt;key&gt; &lt;timestamp&gt; &lt;value&gt;，配合 --input-file option，timestamp为unix时间戳</span><br><span class="line">-r --real-time                       将数据实时提交给服务器</span><br><span class="line">-v --verbose                         详细模式, -vv 更详细</span><br></pre></td></tr></table></figure>
-<h4 id="zabbix-sender使用实例"><a href="#zabbix-sender使用实例" class="headerlink" title="zabbix_sender使用实例"></a>zabbix_sender使用实例</h4><p>客户端主机为RedisServer，服务端IP为192.168.1.2，redis info 得到信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">……</span><br><span class="line"></span><br><span class="line">＃Clients</span><br><span class="line">connected_clients:2129</span><br><span class="line">client_longest_output_list:0</span><br><span class="line">client_biggest_input_buf:0</span><br><span class="line">blocked_clients:6</span><br><span class="line"></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-<p>我们把clients的信息上传给zabbix server，zabbix item配置如下(其它值默认)：</p>
-<p>redis connected_clients:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">type: Zabbix trapper</span><br><span class="line"></span><br><span class="line">Key: redis.info[connected_clients]</span><br><span class="line"></span><br><span class="line">Type of information: Numberic (unsigned)</span><br><span class="line"></span><br><span class="line">Data type: Decimal</span><br></pre></td></tr></table></figure>
-<p>redis client_longest_output_list:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">type: Zabbix trapper</span><br><span class="line"></span><br><span class="line">Key: redis.info[client_longest_output_list]</span><br><span class="line"></span><br><span class="line">Type of information: Numberic (unsigned)</span><br><span class="line"></span><br><span class="line">Data type: Decimal</span><br></pre></td></tr></table></figure>
-<p>redis client_biggest_input_buf:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">type: Zabbix trapper</span><br><span class="line"></span><br><span class="line">Key: redis.info[client_biggest_input_buf]</span><br><span class="line"></span><br><span class="line">Type of information: Numberic (unsigned)</span><br><span class="line"></span><br><span class="line">Data type: Decimal</span><br></pre></td></tr></table></figure>
-<p>redis blocked_clients:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">type: Zabbix trapper</span><br><span class="line"></span><br><span class="line">Key: redis.info[blocked_clients]</span><br><span class="line"></span><br><span class="line">Type of information: Numberic (unsigned)</span><br><span class="line"></span><br><span class="line">Data type: Decimal</span><br></pre></td></tr></table></figure>
-<p>1､ 提交单条数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[connected_clients]&quot; -o 2129 -r`</span><br><span class="line">zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[client_longest_output_list]&quot; -o 0 -r`</span><br><span class="line">zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[client_biggest_input_buf]&quot; -o 0 -r`</span><br><span class="line">zabbix_sender -s &quot;RedisServer&quot; -z 192.168.1.2 -k &quot;redis.info[blocked_clients]&quot; -o 6 -r`</span><br></pre></td></tr></table></figure>
-<p>2、 指量提交数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">＃ cat redis_info.txt</span><br><span class="line">&quot;RedisServer&quot; &quot;redis.info[connected_clients]&quot; 2129</span><br><span class="line">&quot;RedisServer&quot; &quot;redis.info[client_longest_output_list]&quot; 0</span><br><span class="line">&quot;RedisServer&quot; &quot;redis.info[client_biggest_input_buf]&quot; 0</span><br><span class="line">&quot;RedisServer&quot; &quot;redis.info[blocked_clients]&quot; 6</span><br><span class="line"></span><br><span class="line">zabbix_sender -z 192.168.1.2 -i redis_info.txt</span><br><span class="line">info from server: &quot;processed: 4; failed: 0; total: 4; seconds spent: 0.000085&quot;</span><br><span class="line">sent: 4; skipped: 0; total: 4</span><br></pre></td></tr></table></figure>
+<p>在MQTT协议中，一个MQTT数据包由：固定头（Fixed header）、可变头（Variable header）、消息体（payload）三部分构成。MQTT的传输格式非常精小，最小的数据包只有2个bit，且无应用消息头。<br>下图是MQTT为可靠传递消息的三种消息发布服务质量<br><img src="/IoT-AppServer-Protocol/MQTT.jpg" alt="MQTT"></p>
+<p><font color="red">发布/订阅模型允许MQTT客户端以一对一、一对多和多对一方式进行通讯。</font><br>下图是MQTT的发布／订阅消息模式<br><img src="/IoT-AppServer-Protocol/MQTT2.jpg" alt="MQTT2">   </p>
+<h4 id="CoAP"><a href="#CoAP" class="headerlink" title="CoAP"></a>CoAP</h4><p>CoAP是受限制的应用协议(Constrained Application Protocol)的代名词。由于目前物联网中的很多设备都是资源受限型的，所以只有少量的内存空间和有限的计算能力，传统的HTTP协议在物联网应用中就会显得过于庞大而不适用。因此，IETF的CoRE工作组提<br>出了一种基于REST架构、传输层为UDP、网络层为6LowPAN（面向低功耗无线局域网的IPv6）的CoAP协议。<br>CoAP采用与HTTP协议相同的请求响应工作模式。CoAP协议共有4中不同的消息类型。</p>
+<ol>
+<li>CON——需要被确认的请求，如果CON请求被发送，那么对方必须做出响应。</li>
+<li>NON——不需要被确认的请求，如果NON请求被发送，那么对方不必做出回应。</li>
+<li>ACK——应答消息，接受到CON消息的响应。</li>
+<li>RST——复位消息，当接收者接受到的消息包含一个错误，接受者解析消息或者不再关心发送者发送的内容，那么复位消息将会被发送。</li>
+</ol>
+<p>CoAP消息格式使用简单的二进制格式，最小为4个字节。<br><code>一个消息 = 固定长度的头部header + 可选个数的option + 负载payload。Payload的长度根据数据报长度来计算</code><br>主要是一对一的协议   </p>
+<p>举个例子：<br>比如某个设备需要从服务器端查询当前温度信息。<br>请求消息（CON）： GET /temperature , 请求内容会被包在CON消息里面<br>响应消息 (ACK)： 2.05 Content “22.5 C” ，响应内容会被放在ACK消息里面<br><img src="/IoT-AppServer-Protocol/CoAP.png" alt="CoAP"></p>
+<h5 id="CoAP与MQTT的区别"><a href="#CoAP与MQTT的区别" class="headerlink" title="CoAP与MQTT的区别"></a>CoAP与MQTT的区别</h5><p>MQTT和CoAP都是行之有效的物联网协议，但两者还是有很大区别的，比如MQTT协议是基于TCP，而CoAP协议是基于UDP。从应用方向来分析，主要区别有以下几点：</p>
+<ol>
+<li>MQTT协议不支持带有类型或者其它帮助Clients理解的标签信息，也就是说所有MQTT Clients必须要知道消息格式。而CoAP协议则相反，因为CoAP内置发现支持和内容协商，这样便能允许设备相互窥测以找到数据交换的方式。</li>
+<li>MQTT是长连接而CoAP是无连接。MQTT Clients与Broker之间保持TCP长连接，这种情形在NAT环境中也不会产生问题。如果在NAT环境下使用CoAP的话，那就需要采取一些NAT穿透性手段。</li>
+<li>MQTT是多个客户端通过中央代理进行消息传递的多对多协议。它主要通过让客户端发布消息、代理决定消息路由和复制来解耦消费者和生产者。MQTT就是相当于消息传递的实时通讯总线。CoAP基本上就是一个在Server和Client之间传递状态信息的单对单协议。</li>
+</ol>
+<h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4><p>http的全称是HyperText Transfer Protocol，超文本传输协议，这个协议的提出就是为了提供和接收HTML界面，通过这个协议在互联网上面传出web的界面信息。<br><img src="/IoT-AppServer-Protocol/HTTP.png" alt="HTTP"><br>HTTP协议的两个过程，Request和Response，两个都有各自的语言格式:<br>请求报文格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;method&gt; &lt;request-URL&gt; &lt;version&gt;</span><br><span class="line">&lt;headers&gt;</span><br><span class="line"></span><br><span class="line">&lt;entity-body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>响应报文格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;version&gt; &lt;status&gt; &lt;reason-phrase&gt;</span><br><span class="line">&lt;headers&gt;</span><br><span class="line"></span><br><span class="line">&lt;entity-body&gt;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>method：<ul>
+<li>这个很重要，比如说GET和POST方法，这两个是很常用的，GET就是获取什么内容，而POST就是向服务器发送什么数据。当然还有其他的，比如HTTP 1.1中还有：DELETE、PUT、CONNECT、HEAD、OPTIONS、TRACE等一共8个方法（HTTP Method历史：HTTP 0.9 只有GET方法；HTTP 1.0 有GET、POST、HEAD三个方法）。</li>
+</ul>
+</li>
+<li>请求URL:<ul>
+<li>这里填写的URL是不包含IP地址或者域名的，是主机本地文件对应的目录地址，所以我们一般看到的就是“/”。</li>
+</ul>
+</li>
+<li>版本version：<ul>
+<li>格式是HTTP/<major>.<minor>这样的格式，比如说HTTP/1.1.这个版本代表的就是我们使用的HTTP协议的版本，现在使用的一般是HTTP/1.1</minor></major></li>
+</ul>
+</li>
+<li>状态码status:<ul>
+<li>状态码是三个数字，代表的是请求过程中所发生的情况，比如说200代表的是成功，404代表的是找不到文件。</li>
+</ul>
+</li>
+<li>原因短语reason-phrase：<ul>
+<li>状态码的可读版本，状态码就是一个数字，如果你事先不知道这个数字什么意思，可以先查看一下原因短语。</li>
+</ul>
+</li>
+<li>首部header：<ul>
+<li>注意这里的header我们不是叫做头，而是叫做首部。可能有零个首部也可能有多个首部，每个首部包含一个名字后面跟着一个冒号，然后是一个可选的空格，接着是一个值，然后换行。</li>
+</ul>
+</li>
+<li>实体的主体部分entity-body：<ul>
+<li>实体的主体部分包含一个任意数据组成的数据块，并不是所有的报文都包含实体的主体部分，有时候只是一个空行加换行就结束了。</li>
+</ul>
+</li>
+</ol>
+<p>下面我们举个简单的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">请求报文：</span><br><span class="line">GET /index.html HTTP/1.1    </span><br><span class="line">Accept: text/*</span><br><span class="line">Host: www.myweb.com</span><br><span class="line"></span><br><span class="line">响应报文：</span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-type: text/plain</span><br><span class="line">Content-length: 3</span><br></pre></td></tr></table></figure></p>
+<h5 id="HTTP与CoAP的区别"><a href="#HTTP与CoAP的区别" class="headerlink" title="HTTP与CoAP的区别"></a>HTTP与CoAP的区别</h5><p>CoAP是6LowPAN协议栈中的应用层协议，基于REST（表述性状态传递）架构风格，支持与REST进行交互。通常用户可以像使用HTTP协议一样用CoAP协议来访问物联网设备。而且CoAP消息格式使用简单的二进制格式，最小为4个字节。HTTP使用报文格式对于嵌入式设备来说需要传输数据太多，太重，不够灵活。<br><img src="/IoT-AppServer-Protocol/HTTP2.png" alt="HTTP2"></p>
+<h4 id="XMPP协议"><a href="#XMPP协议" class="headerlink" title="XMPP协议"></a>XMPP协议</h4><p>XMPP（可扩展通讯和表示协议）是一种基于可扩展标记语言（XML）的协议，它继承了在XML环境中灵活的发展性。可用于服务类实时通讯、表示和需求响应服务中的XML数据元流式传输。XMPP以Jabber协议为基础，而Jabber是即时通讯中常用的开放式协议。</p>
+<h5 id="基本网络结构"><a href="#基本网络结构" class="headerlink" title="基本网络结构"></a>基本网络结构</h5><p>XMPP中定义了三个角色，客户端，服务器，网关。通信能够在这三者的任意两个之间双向发生。服务器同时承担了客户端信息记录，连接管理和信息的路由功能。网关承担着与异构即时通信系统的互联互通，异构系统可以包括SMS（短信），MSN，ICQ等。基本的网络形式是单客户端通过TCP/IP连接到单服务器，然后在之上传输XML。</p>
+<h5 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h5><p>传输的是与即时通讯相关的指令。在以前这些命令要么用2进制的形式发送（比如QQ），要么用纯文本指令加空格加参数加换行符的方式发送（比如MSN）。而XMPP传输的即时通讯指令的逻辑与以往相仿，只是协议的形式变成了XML格式的纯文本。<br>举个例子:<br>客户端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xmlversion=&apos;1.0&apos;?&gt;</span><br><span class="line">&lt;stream:stream</span><br><span class="line">to=&apos;example_com&apos;</span><br><span class="line">xmlns=&apos;jabber:client&apos;</span><br><span class="line">xmlns:stream=&apos;http_etherx_jabber_org/streams&apos;</span><br><span class="line">version=&apos;1.0&apos;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xmlversion=&apos;1.0&apos;?&gt;</span><br><span class="line">&lt;stream:stream</span><br><span class="line">from=&apos;example_com&apos;</span><br><span class="line">id=&apos;someid&apos;</span><br><span class="line">xmlns=&apos;jabber:client&apos;</span><br><span class="line">xmlns:stream=&apos;http_etherx_jabber_org/streams&apos;</span><br><span class="line">version=&apos;1.0&apos;&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h5><p>XMPP核心协议通信的基本模式就是先建立一个stream，然后协商一堆安全之类的东西，中间通信过程就是客户端发送XML Stanza，一个接一个的。服务器根据客户端发送的信息以及程序的逻辑，发送XML Stanza给客户端。但是这个过程并不是一问一答的，任何时候都有可能从一方发信给另外一方。通信的最后阶段是关闭流，关闭TCP/IP连接。<br><img src="/IoT-AppServer-Protocol/XMPP.png" alt="XMPP"></p>
+<h4 id="SoAP协议"><a href="#SoAP协议" class="headerlink" title="SoAP协议"></a>SoAP协议</h4><p>SoAP(简单对象访问协议)是交换数据的一种协议规范，是一种轻量的、简单的、基于可扩展标记语言（XML）的协议，它被设计成在WEB上交换结构化的和固化的信息。SOAP 可以和现存的许多因特网协议和格式结合使用，包括超文本传输协议（HTTP），简单邮件传输协议（SMTP），多用途网际邮件扩充协议（MIME）。它还支持从消息系统到远程过程调用（RPC）等大量的应用程序。SOAP使用基于XML的数据结构和超文本传输协议(HTTP)的组合定义了一个标准的方法来使用Internet上各种不同操作环境中的分布式对象。 </p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>从当前物联网应用发展趋势来分析，MQTT协议具有一定的优势。因为目前国内外主要的云计算服务商，比如阿里云、AWS、百度云、Azure以及腾讯云都一概支持MQTT协议。还有一个原因就是MQTT协议比CoAP成熟的要早，所以MQTT具有一定的先发优势。但随着物联网的智能化和多变化的发展，后续物联网应用平台肯定会兼容更多的物联网应用层协议。</p>
+<p>原文：<a href="https://blog.csdn.net/acongge2010/article/details/79142380" target="_blank" rel="noopener">https://blog.csdn.net/acongge2010/article/details/79142380</a> </p>
 
       
     </div>
@@ -427,7 +476,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/zabbix/" rel="tag"># zabbix</a>
+            <a href="/tags/IoT/" rel="tag"># IoT</a>
+          
+            <a href="/tags/物联网/" rel="tag"># 物联网</a>
           
         </div>
       
@@ -440,15 +491,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/IoT-protocol.html" rel="next" title="常见的的物联网（IoT）协议">
+                <i class="fa fa-chevron-left"></i> 常见的的物联网（IoT）协议
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Ubuntu-16-04-install-mysql5-7.html" rel="prev" title="Ubuntu 16.04 install mysql5.7">
-                Ubuntu 16.04 install mysql5.7 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#zabbix-sender命令详解"><span class="nav-number">1.1.</span> <span class="nav-text">zabbix_sender命令详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zabbix-sender使用实例"><span class="nav-number">1.2.</span> <span class="nav-text">zabbix_sender使用实例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MQTT协议"><span class="nav-number">1.1.</span> <span class="nav-text">MQTT协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CoAP"><span class="nav-number">1.2.</span> <span class="nav-text">CoAP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CoAP与MQTT的区别"><span class="nav-number">1.2.1.</span> <span class="nav-text">CoAP与MQTT的区别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP协议"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTTP与CoAP的区别"><span class="nav-number">1.3.1.</span> <span class="nav-text">HTTP与CoAP的区别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XMPP协议"><span class="nav-number">1.4.</span> <span class="nav-text">XMPP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本网络结构"><span class="nav-number">1.4.1.</span> <span class="nav-text">基本网络结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#功能"><span class="nav-number">1.4.2.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作原理"><span class="nav-number">1.4.3.</span> <span class="nav-text">工作原理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SoAP协议"><span class="nav-number">1.5.</span> <span class="nav-text">SoAP协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number">2.</span> <span class="nav-text">总结：</span></a></li></ol></div>
             
 
           </div>
