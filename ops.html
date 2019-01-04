@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,vi,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="Quick StartLinux设置默认编辑器为vi在使用edquota编辑限额时出现错误：1edquota: cannot exec /usr/bin/editor">
-<meta name="keywords" content="Linux,vi">
+<meta name="description" content="前言这两年随着公司在各行业领域的深入以及运营策略的调整，平台业务量有了突飞猛进的增长。在实际运维过程中，因为业务系统越来越复杂，变更越来越频繁，总是存在各种各样监控未覆盖或者以前未知的故障发生，服务器也是处理野蛮增长的状态，然而运维还停留在“刀耕火种”的原始状态。在这种工作方式下，服务器的安装、初始化，软件部署、服务发布和监控都是通过手动方式来完成的，需要运维人员登录到服务器上，一台一台去管理和维">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux设置默认编辑器">
-<meta property="og:url" content="https://www.oaascloud.com/Linux-Set-Default-Editor.html">
+<meta property="og:title" content="运维工作思考">
+<meta property="og:url" content="https://www.oaascloud.com/ops.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="Quick StartLinux设置默认编辑器为vi在使用edquota编辑限额时出现错误：1edquota: cannot exec /usr/bin/editor">
+<meta property="og:description" content="前言这两年随着公司在各行业领域的深入以及运营策略的调整，平台业务量有了突飞猛进的增长。在实际运维过程中，因为业务系统越来越复杂，变更越来越频繁，总是存在各种各样监控未覆盖或者以前未知的故障发生，服务器也是处理野蛮增长的状态，然而运维还停留在“刀耕火种”的原始状态。在这种工作方式下，服务器的安装、初始化，软件部署、服务发布和监控都是通过手动方式来完成的，需要运维人员登录到服务器上，一台一台去管理和维">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-25T09:11:52.320Z">
+<meta property="og:updated_time" content="2019-01-04T16:47:18.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux设置默认编辑器">
-<meta name="twitter:description" content="Quick StartLinux设置默认编辑器为vi在使用edquota编辑限额时出现错误：1edquota: cannot exec /usr/bin/editor">
+<meta name="twitter:title" content="运维工作思考">
+<meta name="twitter:description" content="前言这两年随着公司在各行业领域的深入以及运营策略的调整，平台业务量有了突飞猛进的增长。在实际运维过程中，因为业务系统越来越复杂，变更越来越频繁，总是存在各种各样监控未覆盖或者以前未知的故障发生，服务器也是处理野蛮增长的状态，然而运维还停留在“刀耕火种”的原始状态。在这种工作方式下，服务器的安装、初始化，软件部署、服务发布和监控都是通过手动方式来完成的，需要运维人员登录到服务器上，一台一台去管理和维">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://www.oaascloud.com/Linux-Set-Default-Editor.html">
+  <link rel="canonical" href="https://www.oaascloud.com/ops.html">
 
 
 
 
 
-  <title>Linux设置默认编辑器 | Ops as a Service</title>
+  <title>运维工作思考 | Ops as a Service</title>
   
 
 
@@ -295,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.oaascloud.com/Linux-Set-Default-Editor.html">
+    <link itemprop="mainEntityOfPage" href="https://www.oaascloud.com/ops.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cabbin">
@@ -312,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux设置默认编辑器</h1>
+          <h1 class="post-title" itemprop="name headline">运维工作思考</h1>
         
 
         <div class="post-meta">
@@ -324,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T17:08:58+08:00">
-                2018-12-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T23:31:48+08:00">
+                2019-01-04
               </time>
             
 
@@ -334,28 +333,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -384,10 +361,14 @@
       
 
       
-        <h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="Linux设置默认编辑器为vi"><a href="#Linux设置默认编辑器为vi" class="headerlink" title="Linux设置默认编辑器为vi"></a>Linux设置默认编辑器为vi</h4><p>在使用edquota编辑限额时出现错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">edquota: cannot exec /usr/bin/editor</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>根据错误提示，edquota命令没有找到可用的编辑器，于是设置系统默认的编辑器。<br>在linux 中设置默认编辑器为vi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export EDITOR=vi</span><br></pre></td></tr></table></figure></p>
-
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这两年随着公司在各行业领域的深入以及运营策略的调整，平台业务量有了突飞猛进的增长。在实际运维过程中，因为业务系统越来越复杂，变更越来越频繁，总是存在各种各样监控未覆盖或者以前未知的故障发生，服务器也是处理野蛮增长的状态，然而运维还停留在“刀耕火种”的原始状态。<br>在这种工作方式下，服务器的安装、初始化，软件部署、服务发布和监控都是通过手动方式来完成的，需要运维人员登录到服务器上，一台一台去管理和维护。这种非并发的线性工作方式是制约效率的最大障碍。同时，因为手动的操作方式过于依赖运维人员的执行顺序和操作步骤，稍有不慎即可能导致服务器配置不一致，对于数据库或MQ的误操作甚至会带来灾难性的故障，即便现在用了docker，也写了一些自动化的脚本提升工作效率和质量，但充其量也只是个“石器时代”的DevOps。<br><a id="more"></a></p>
+<h3 id="解决方向"><a href="#解决方向" class="headerlink" title="解决方向"></a>解决方向</h3><p>现阶段，无论项目层面还是运维层面，都有三个大方向的问题需要解决：</p>
+<ul>
+<li>质量<br>运维完成质量体现在可用性(是否稳定、用户体验是否友好）、规范性、安全性(除了防范攻击以外，还包括应急容灾等），其中，对于一个已上线的商用平台稳定性尤其重要，稳定是1，其他都是0。</li>
+<li>效率<br>由于运维人员和其他职能线条的人员比例不匹配，对于基础设施的交付、中间件的交付，代码发布、故障的处理、定制化项目的交付等，如何使这些任务完成更高效，这是运维人员面临的主要问题。</li>
+<li>成本<br>在项目上运维部门往往被定位为消耗部门，实际交付过程中运维费用往往包含在开发费用里，如何通过最少的人力完成SLA是运维部门帮项目赚钱的唯一方法。另外，项目越大往往服务器等成本支出就越大，然而这个增长比例不一定是正确的，所以运维成本最核心要解决的是搞清楚具体钱花在哪个方向，并对这些成本问题进行优化。</li>
+</ul>
+<h3 id="技术层面解决"><a href="#技术层面解决" class="headerlink" title="技术层面解决"></a>技术层面解决</h3><h3 id="管理层面解决"><a href="#管理层面解决" class="headerlink" title="管理层面解决"></a>管理层面解决</h3>
       
     </div>
     
@@ -402,14 +383,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/vi/" rel="tag"># vi</a>
-          
-        </div>
-      
 
       
       
@@ -419,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Linux-Get-OS-Release.html" rel="next" title="Linux查看操作系统版本">
-                <i class="fa fa-chevron-left"></i> Linux查看操作系统版本
+              <a href="/Aliyun-SLB-Websocket.html" rel="next" title="阿里SLB上使用Webscoket">
+                <i class="fa fa-chevron-left"></i> 阿里SLB上使用Webscoket
               </a>
             
           </div>
@@ -428,10 +401,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/yum-install-nginx.html" rel="prev" title="yum install nginx">
-                yum install nginx <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -563,7 +532,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux设置默认编辑器为vi"><span class="nav-number">1.1.</span> <span class="nav-text">Linux设置默认编辑器为vi</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方向"><span class="nav-number">2.</span> <span class="nav-text">解决方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术层面解决"><span class="nav-number">3.</span> <span class="nav-text">技术层面解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理层面解决"><span class="nav-number">4.</span> <span class="nav-text">管理层面解决</span></a></li></ol></div>
             
 
           </div>
