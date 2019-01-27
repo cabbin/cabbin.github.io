@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ops as a Service">
 <meta property="og:description" content="FaultsThere is an error occurred during initialization of the jenkins:12345OfflineThis Jenkins instance appears to be offline.For information about installing Jenkins without an internet connection, s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-13T16:32:49.021Z">
+<meta property="og:updated_time" content="2019-01-13T17:24:19.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jenkins-plugin installed error">
 <meta name="twitter:description" content="FaultsThere is an error occurred during initialization of the jenkins:12345OfflineThis Jenkins instance appears to be offline.For information about installing Jenkins without an internet connection, s">
@@ -387,6 +387,7 @@
         <h3 id="Faults"><a href="#Faults" class="headerlink" title="Faults"></a>Faults</h3><p>There is an error occurred during initialization of the jenkins:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Offline</span><br><span class="line">This Jenkins instance appears to be offline.</span><br><span class="line">For information about installing Jenkins without an internet connection, see the Offline Jenkins Installation Documentation. </span><br><span class="line"></span><br><span class="line">You may choose to continue by configuring a proxy or skipping plugin installation.</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>In my case, it has something to do with SSL. I manage to fix it by editing <code>/Users/Shared/Jenkins//Home/hudson.model.UpdateCenter.xml</code> and change url to use <font color="red">“http” instead of “https”</font>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&apos;1.1&apos; encoding=&apos;UTF-8&apos;?&gt;</span><br><span class="line">&lt;sites&gt;</span><br><span class="line">  &lt;site&gt;</span><br><span class="line">    &lt;id&gt;default&lt;/id&gt;</span><br><span class="line">    &lt;url&gt;http://updates.jenkins.io/update-center.json&lt;/url&gt;</span><br><span class="line">  &lt;/site&gt;</span><br><span class="line">&lt;/sites&gt;</span><br></pre></td></tr></table></figure></p>
+<p>you can also use the available url:<br><code>https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/stable-2.7/update-center.json</code></p>
 <p>Restart jenkins and reload the website, it no longer shows offline.</p>
 
       
@@ -427,6 +428,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/LC-CTYPE-warning.html" rel="prev" title="LC_CTYPE warning">
+                LC_CTYPE warning <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -503,7 +508,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
