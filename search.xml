@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python get weekday]]></title>
+    <url>%2Fpython-get-weekday.html</url>
+    <content type="text"><![CDATA[Quick Start1234567891011121314import datetimeimport calendardef get_current_week(): monday, sunday = datetime.date.today(), datetime.date.today() one_day = datetime.timedelta(days=1) while monday.weekday() != calendar.MONDAY: monday -= one_day while sunday.weekday() != calendar.SUNDAY: sunday += one_day return monday, sundayprint(get_current_week())]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LC_CTYPE warning]]></title>
     <url>%2FLC-CTYPE-warning.html</url>
     <content type="text"><![CDATA[Quick Startssh登录centos服务器，会显示:1-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory 解决方案在/etc/environment加入（没有就新建）:12LC_ALL=en_US.UTF-8LANG=en_US.UTF-8]]></content>
