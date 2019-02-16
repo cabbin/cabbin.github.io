@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[NGGizwits]]></title>
+    <url>%2FNGGizwits.html</url>
+    <content type="text"><![CDATA[NGGizwits范围本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。 术语、定义和缩略语 述语 缩略语 定义 业务中台 b 数据中台 b Tencent Kubernetes Engine TKE 腾讯云基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能容器管理服务 VPC VPC NET网关 VPC 基础网络 VPC 总体部署方案设计原则部署要求充分考虑有效资源集中整合、优化的原则，便于日后实现系统的统一规划、应用、管理，从而实现资源的有效共享，在做到集中整合的同时，充分实现高可靠、高可用、高稳定、高性能和易扩展的要求。主要围绕以下目标开展： 异地多活 系统充分解耦 易于运维管理 易于监控管理 易于网络管理 易于日志的统一收集和分析 易于调配的硬件资源，按需分配 系统架构逻辑图 部署说明 全国分为北京、上海、广州等多个区域，不同区域有不同的域名，前端通过智能DNS分发。 不同地域用VPC网络隔离，各VPC之间使用对等网络技术连接。 业务中台规划独立子网，使用腾讯云容器服务（TKE）部署。 数据中心规划独立子网，使用腾讯云的关系型数据库及Redis缓存，但Mongo和RabbitMQ由机智云自行搭建和维护。 数据中心在广州区域，应急容灾中心在上海区域，通过腾讯云DTS服务实时同步。 数据中台规划独立子网，用于大数据智能分析。 运维管理域规划独立子网，用于监控和运维管理。 域名规划 二级域名：gizwits.com 默认域名：m2m.gizwits.com api.gizwits.com enterprise.gizwits.com等 各区域名：在默认域名前加上地区标识，如广州区域为 gzm2m1.gizwits.com gzm2m2.gizwits.com gzapi1.gizwits.com gzapi2.gizwits.com ，上海区域为 shm2m1.gizwits.com shapi1.gizwits.com shm2m1.gizwits.com shapi2.gizwits.com 网络规划VPC 广州： CIDR: 10.40.0.0/16 子网: 业务中台 -&gt; 10.40.3.0/24 数据中心 -&gt; 10.40.2.0/24 数据中台 -&gt; 10.40.1.0/24 管理域 -&gt; 10.40.0.0/24 上海： CIDR: 10.39.0.0/16 子网: 业务中台 -&gt; 10.39.3.0/24 数据中心 -&gt; 10.39.2.0/24 北京： CIDR: 10.38.0.0/16 子网: 业务中台 -&gt; 10.38.3.0/24 成都： CIDR: 10.37.0.0/16 子网: 业务中台 -&gt; 10.37.3.0/24 网络带宽 NAT网关 公网网关主机规划 应用部署规划演进方案]]></content>
+      <tags>
+        <tag>gizwits</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python get weekday]]></title>
     <url>%2Fpython-get-weekday.html</url>
     <content type="text"><![CDATA[Quick Start1234567891011121314import datetimeimport calendardef get_current_week(): monday, sunday = datetime.date.today(), datetime.date.today() one_day = datetime.timedelta(days=1) while monday.weekday() != calendar.MONDAY: monday -= one_day while sunday.weekday() != calendar.SUNDAY: sunday += one_day return monday, sundayprint(get_current_week())]]></content>
