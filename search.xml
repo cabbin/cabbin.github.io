@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[业务云监控指标体系]]></title>
-    <url>%2FBizMonitor.html</url>
-    <content type="text"><![CDATA[关键词： 安防、多链路、消息推送 监控对象系统指标主机（操作系统）指标，主要指从机器资源角度设定的与机器本身比较相关的指标，主要包括机器的CPU、Memory、Disk IO、Net IO等。 应用指标基础应用指标基础应用指标是指由通用型的应用程序产生的指标，包括： nginxNginx服务器的请求状态、access日志返回码及响应时长分析、服务端口监控。 tomcat redis缓存容量监控、缓存命中率、连接数等 mysql 非基础应用指标非基础应用指标是指业务云开发的服务组件，包括端口、进程数、定时任务启动情况等: app（手机端应用组件） backend（后台应用组件） netty（消息处理应用组件） job（定时任务应用组件） 业务指标接口/业务类 接口/业务并发量，按分钟、小时、天做聚合，支持分时对比。 接口/业务成功量，按分钟、小时、天做聚合，支持分时对比 接口/业务处理时长，按分钟、小时、天做聚合，支持分时对比 消息数据 平台至业务云全链路的每秒消息流量 平台至业务云全链路的每秒消息处理流量 第三方平台接口请求状态 极光/百度app告警推送量与成功率，按分钟、小时、天做聚合。 短信告警推送量与成功率，按分钟、小时、天做聚合。 语音告警推送量与成功率，按分钟、小时、天做聚合。 设备运行情况 在线设备量分时对比。 实时在线设备状态统计占比 设备及在线设备各地域分布状态 业务流程完整度监控 设备配网至联系人配置等各个配置阶段的数据状态监控]]></content>
-      <tags>
-        <tag>gizwits</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[NGGizwits]]></title>
-    <url>%2FNGGizwits.html</url>
-    <content type="text"><![CDATA[范围本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。 术语、定义和缩略语 述语 缩略语 定义 业务中台 b 数据中台 b Tencent Kubernetes Engine TKE 腾讯云基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能容器管理服务 VPC VPC NET网关 VPC 基础网络 VPC a 总体部署方案设计原则部署要求充分考虑有效资源集中整合、优化的原则，便于日后实现系统的统一规划、应用、管理，从而实现资源的有效共享，在做到集中整合的同时，充分实现高可靠、高可用、高稳定、高性能和易扩展的要求。主要围绕以下目标开展： 异地多活 系统充分解耦 易于运维管理 易于监控管理 易于网络管理 易于日志的统一收集和分析 易于调配的硬件资源，按需分配 系统架构逻辑图 部署说明 全国分为北京、上海、广州等多个区域，不同区域有不同的域名，前端通过智能DNS分发。 不同地域用VPC网络隔离，各VPC之间使用对等网络技术连接。 业务中台规划独立子网，使用腾讯云容器服务（TKE）部署。 数据中心规划独立子网，使用腾讯云的关系型数据库及Redis缓存，但Mongo和RabbitMQ由机智云自行搭建和维护。 数据中心在广州区域，应急容灾中心在上海区域，通过腾讯云DTS服务实时同步。 数据中台规划独立子网，用于大数据智能分析。 运维管理域规划独立子网，用于监控和运维管理。 域名规划 二级域名：gizwits.com 默认域名：m2m.gizwits.com api.gizwits.com enterprise.gizwits.com等 各区域名：在默认域名前加上地区标识，如广州区域为 gzm2m1.gizwits.com gzm2m2.gizwits.com gzapi1.gizwits.com gzapi2.gizwits.com ，上海区域为 shm2m1.gizwits.com shapi1.gizwits.com shm2m1.gizwits.com shapi2.gizwits.com 网络规划VPC与子网 广州： 名称: Gizwits_Prod_GZ CIDR: 10.40.0.0/16 子网: 业务中台 -&gt; 10.40.3.0/24 数据中心 -&gt; 10.40.2.0/24 数据中台 -&gt; 10.40.1.0/24 管理域 -&gt; 10.40.0.0/24 上海： 名称: Gizwits_Prod_SH CIDR: 10.39.0.0/16 子网: 业务中台 -&gt; 10.39.3.0/24 数据中心 -&gt; 10.39.2.0/24 北京： 名称: Gizwits_Prod_BJ CIDR: 10.38.0.0/16 子网: 业务中台 -&gt; 10.38.3.0/24 成都： 名称: Gizwits_Prod_CD CIDR: 10.37.0.0/16 子网: 业务中台 -&gt; 10.37.3.0/24 网络带宽 NAT网关 公网网关 安全组主机规划 类型 配置 数量 标签集 CVM 8核16G 2 role={MANAGEMENT} CVM 8核16G 12 role={BIGDATA} REDIS 8核16G 12 role={RDS} RDS 8核16G 12 role={MYSQL} CVM 8核16G 12 role={MONGO} CVM 8核16G 12 role={RABBITMQ} CVM 8核16G 12 role={M2MST,M2MSB} 应用部署规划 Application Label M2MST0[1-7] role={M2DST0[1-7]} 演进方案VPC迁移基础网络互通可以将基础网络内的云服务器关联至指定私有网络，使基础网络中的云服务器可以访问私有网络内的云服务器、数据库等资源，同时，私有网络内云服务器也可以访问互通的基础网络内云服务器，但无法访问数据库等其他计算资源，在VPC迁移时需按步骤迁移。 数据层迁移至VPC 云主机迁移至VPC数据层云化应用层容器化异地多活部署]]></content>
-      <tags>
-        <tag>gizwits</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[python get weekday]]></title>
     <url>%2Fpython-get-weekday.html</url>
     <content type="text"><![CDATA[Quick Start1234567891011121314import datetimeimport calendardef get_current_week(): monday, sunday = datetime.date.today(), datetime.date.today() one_day = datetime.timedelta(days=1) while monday.weekday() != calendar.MONDAY: monday -= one_day while sunday.weekday() != calendar.SUNDAY: sunday += one_day return monday, sundayprint(get_current_week())]]></content>
