@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="NGGizwits范围本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。 术语、定义和缩略语   述语 缩略语 定义     业务中台  b   数据中台  b   Tencent Kubernetes Engine TKE 腾讯云基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能">
+<meta name="description" content="范围本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。">
 <meta name="keywords" content="gizwits">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NGGizwits">
 <meta property="og:url" content="https://www.oaascloud.com/NGGizwits.html">
 <meta property="og:site_name" content="Ops as a Service">
-<meta property="og:description" content="NGGizwits范围本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。 术语、定义和缩略语   述语 缩略语 定义     业务中台  b   数据中台  b   Tencent Kubernetes Engine TKE 腾讯云基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能">
+<meta property="og:description" content="范围本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.oaascloud.com/NGGizwits/1.png">
-<meta property="og:updated_time" content="2019-02-16T04:00:27.000Z">
+<meta property="og:updated_time" content="2019-02-21T04:16:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NGGizwits">
-<meta name="twitter:description" content="NGGizwits范围本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。 术语、定义和缩略语   述语 缩略语 定义     业务中台  b   数据中台  b   Tencent Kubernetes Engine TKE 腾讯云基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能">
+<meta name="twitter:description" content="范围本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。">
 <meta name="twitter:image" content="https://www.oaascloud.com/NGGizwits/1.png">
 
 
@@ -364,44 +364,45 @@
       
 
       
-        <h1 id="NGGizwits"><a href="#NGGizwits" class="headerlink" title="NGGizwits"></a>NGGizwits</h1><h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><p>本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。</p>
+        <h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><p>本文主要讲述机智云平台生产环境的部署情况，使得读者可以大概了解每台设备上运行的程序和配置，从而对整个系统的系统软件、应用程序和配置情况有清晰的了解。<br><a id="more"></a></p>
 <h2 id="术语、定义和缩略语"><a href="#术语、定义和缩略语" class="headerlink" title="术语、定义和缩略语"></a>术语、定义和缩略语</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">述语</th>
-<th style="text-align:left">缩略语</th>
-<th style="text-align:left">定义</th>
+<th>述语</th>
+<th>缩略语</th>
+<th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">业务中台</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">b</td>
+<td>业务中台</td>
+<td></td>
+<td>b</td>
 </tr>
 <tr>
-<td style="text-align:left">数据中台</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">b</td>
+<td>数据中台</td>
+<td></td>
+<td>b</td>
 </tr>
 <tr>
-<td style="text-align:left">Tencent Kubernetes Engine</td>
-<td style="text-align:left">TKE</td>
-<td style="text-align:left">腾讯云基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能容器管理服务</td>
+<td>Tencent Kubernetes Engine</td>
+<td>TKE</td>
+<td>腾讯云基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能容器管理服务</td>
 </tr>
 <tr>
-<td style="text-align:left">VPC</td>
-<td style="text-align:left">VPC</td>
-<td style="text-align:left"></td>
+<td>VPC</td>
+<td>VPC</td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:left">NET网关</td>
-<td style="text-align:left">VPC</td>
-<td style="text-align:left"></td>
+<td>NET网关</td>
+<td>VPC</td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:left">基础网络</td>
-<td style="text-align:left">VPC</td>
+<td>基础网络</td>
+<td>VPC</td>
+<td>a</td>
 </tr>
 </tbody>
 </table>
@@ -430,31 +431,110 @@
 <li>默认域名：m2m.gizwits.com api.gizwits.com enterprise.gizwits.com等   </li>
 <li>各区域名：在默认域名前加上地区标识，如广州区域为 gzm2m1.gizwits.com gzm2m2.gizwits.com gzapi1.gizwits.com gzapi2.gizwits.com ，上海区域为 shm2m1.gizwits.com shapi1.gizwits.com shm2m1.gizwits.com shapi2.gizwits.com   </li>
 </ul>
-<h3 id="网络规划"><a href="#网络规划" class="headerlink" title="网络规划"></a>网络规划</h3><h4 id="VPC"><a href="#VPC" class="headerlink" title="VPC"></a>VPC</h4><ul>
+<h3 id="网络规划"><a href="#网络规划" class="headerlink" title="网络规划"></a>网络规划</h3><h4 id="VPC与子网"><a href="#VPC与子网" class="headerlink" title="VPC与子网"></a>VPC与子网</h4><ul>
 <li>广州：<ul>
-<li>CIDR:<br>  10.40.0.0/16</li>
+<li>名称: Gizwits_Prod_GZ</li>
+<li>CIDR: 10.40.0.0/16</li>
 <li>子网:<br>  业务中台 -&gt; 10.40.3.0/24<br>  数据中心 -&gt; 10.40.2.0/24<br>  数据中台 -&gt; 10.40.1.0/24<br>  管理域   -&gt; 10.40.0.0/24   </li>
 </ul>
 </li>
 <li>上海：<ul>
-<li>CIDR:<br>  10.39.0.0/16</li>
+<li>名称: Gizwits_Prod_SH</li>
+<li>CIDR: 10.39.0.0/16</li>
 <li>子网:<br>  业务中台 -&gt; 10.39.3.0/24<br>  数据中心 -&gt; 10.39.2.0/24   </li>
 </ul>
 </li>
 <li>北京：<ul>
-<li>CIDR:<br>  10.38.0.0/16</li>
+<li>名称: Gizwits_Prod_BJ</li>
+<li>CIDR: 10.38.0.0/16</li>
 <li>子网:<br>  业务中台 -&gt; 10.38.3.0/24   </li>
 </ul>
 </li>
 <li>成都：<ul>
-<li>CIDR:<br>  10.37.0.0/16</li>
-<li>子网:<br>  业务中台 -&gt; 10.37.3.0/24   <h3 id="网络带宽"><a href="#网络带宽" class="headerlink" title="网络带宽"></a>网络带宽</h3></li>
+<li>名称: Gizwits_Prod_CD</li>
+<li>CIDR: 10.37.0.0/16</li>
+<li>子网:<br>  业务中台 -&gt; 10.37.3.0/24   </li>
 </ul>
 </li>
-<li>NAT网关</li>
-<li>公网网关<h3 id="主机规划"><a href="#主机规划" class="headerlink" title="主机规划"></a>主机规划</h3></li>
 </ul>
-<h3 id="应用部署规划"><a href="#应用部署规划" class="headerlink" title="应用部署规划"></a>应用部署规划</h3><h2 id="演进方案"><a href="#演进方案" class="headerlink" title="演进方案"></a>演进方案</h2>
+<h3 id="网络带宽"><a href="#网络带宽" class="headerlink" title="网络带宽"></a>网络带宽</h3><ul>
+<li>NAT网关</li>
+<li>公网网关</li>
+</ul>
+<h3 id="安全组"><a href="#安全组" class="headerlink" title="安全组"></a>安全组</h3><h3 id="主机规划"><a href="#主机规划" class="headerlink" title="主机规划"></a>主机规划</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>配置</th>
+<th>数量</th>
+<th>标签集</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CVM</td>
+<td>8核16G</td>
+<td>2</td>
+<td>role={MANAGEMENT}</td>
+</tr>
+<tr>
+<td>CVM</td>
+<td>8核16G</td>
+<td>12</td>
+<td>role={BIGDATA}</td>
+</tr>
+<tr>
+<td>REDIS</td>
+<td>8核16G</td>
+<td>12</td>
+<td>role={RDS}</td>
+</tr>
+<tr>
+<td>RDS</td>
+<td>8核16G</td>
+<td>12</td>
+<td>role={MYSQL}</td>
+</tr>
+<tr>
+<td>CVM</td>
+<td>8核16G</td>
+<td>12</td>
+<td>role={MONGO}</td>
+</tr>
+<tr>
+<td>CVM</td>
+<td>8核16G</td>
+<td>12</td>
+<td>role={RABBITMQ}</td>
+</tr>
+<tr>
+<td>CVM</td>
+<td>8核16G</td>
+<td>12</td>
+<td>role={M2MST,M2MSB}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="应用部署规划"><a href="#应用部署规划" class="headerlink" title="应用部署规划"></a>应用部署规划</h3><table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M2MST0[1-7]</td>
+<td>role={M2DST0[1-7]}</td>
+</tr>
+</tbody>
+</table>
+<h2 id="演进方案"><a href="#演进方案" class="headerlink" title="演进方案"></a>演进方案</h2><h3 id="VPC迁移"><a href="#VPC迁移" class="headerlink" title="VPC迁移"></a>VPC迁移</h3><p>基础网络互通可以将基础网络内的云服务器关联至指定私有网络，使基础网络中的云服务器可以访问私有网络内的云服务器、数据库等资源，同时，私有网络内云服务器也可以访问互通的基础网络内云服务器，但无法访问数据库等其他计算资源，在VPC迁移时需按步骤迁移。</p>
+<ol>
+<li>数据层迁移至VPC</li>
+<li>云主机迁移至VPC<h3 id="数据层云化"><a href="#数据层云化" class="headerlink" title="数据层云化"></a>数据层云化</h3><h3 id="应用层容器化"><a href="#应用层容器化" class="headerlink" title="应用层容器化"></a>应用层容器化</h3><h3 id="异地多活部署"><a href="#异地多活部署" class="headerlink" title="异地多活部署"></a>异地多活部署</h3></li>
+</ol>
+
       
     </div>
     
@@ -493,6 +573,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/BizMonitor.html" rel="prev" title="业务云监控指标体系">
+                业务云监控指标体系 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -569,7 +653,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -624,7 +708,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NGGizwits"><span class="nav-number">1.</span> <span class="nav-text">NGGizwits</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#范围"><span class="nav-number">1.1.</span> <span class="nav-text">范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语、定义和缩略语"><span class="nav-number">1.2.</span> <span class="nav-text">术语、定义和缩略语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总体部署方案"><span class="nav-number">1.3.</span> <span class="nav-text">总体部署方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计原则"><span class="nav-number">1.3.1.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统架构逻辑图"><span class="nav-number">1.3.2.</span> <span class="nav-text">系统架构逻辑图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署说明"><span class="nav-number">1.3.3.</span> <span class="nav-text">部署说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名规划"><span class="nav-number">1.3.4.</span> <span class="nav-text">域名规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络规划"><span class="nav-number">1.3.5.</span> <span class="nav-text">网络规划</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#VPC"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">VPC</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络带宽"><span class="nav-number">1.3.6.</span> <span class="nav-text">网络带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主机规划"><span class="nav-number">1.3.7.</span> <span class="nav-text">主机规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用部署规划"><span class="nav-number">1.3.8.</span> <span class="nav-text">应用部署规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#演进方案"><span class="nav-number">1.4.</span> <span class="nav-text">演进方案</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#范围"><span class="nav-number">1.</span> <span class="nav-text">范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语、定义和缩略语"><span class="nav-number">2.</span> <span class="nav-text">术语、定义和缩略语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总体部署方案"><span class="nav-number">3.</span> <span class="nav-text">总体部署方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计原则"><span class="nav-number">3.1.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统架构逻辑图"><span class="nav-number">3.2.</span> <span class="nav-text">系统架构逻辑图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署说明"><span class="nav-number">3.3.</span> <span class="nav-text">部署说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名规划"><span class="nav-number">3.4.</span> <span class="nav-text">域名规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络规划"><span class="nav-number">3.5.</span> <span class="nav-text">网络规划</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#VPC与子网"><span class="nav-number">3.5.1.</span> <span class="nav-text">VPC与子网</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络带宽"><span class="nav-number">3.6.</span> <span class="nav-text">网络带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全组"><span class="nav-number">3.7.</span> <span class="nav-text">安全组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主机规划"><span class="nav-number">3.8.</span> <span class="nav-text">主机规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用部署规划"><span class="nav-number">3.9.</span> <span class="nav-text">应用部署规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#演进方案"><span class="nav-number">4.</span> <span class="nav-text">演进方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VPC迁移"><span class="nav-number">4.1.</span> <span class="nav-text">VPC迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据层云化"><span class="nav-number">4.2.</span> <span class="nav-text">数据层云化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用层容器化"><span class="nav-number">4.3.</span> <span class="nav-text">应用层容器化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异地多活部署"><span class="nav-number">4.4.</span> <span class="nav-text">异地多活部署</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -644,7 +728,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
