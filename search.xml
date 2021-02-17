@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何查找那个目录下文件最多]]></title>
+    <url>%2Finode-full.html</url>
+    <content type="text"><![CDATA[Quick Start如何查找那个目录下文件最多通过以下命令依次返回/目录下文件最多的目录,进入这个目录，再执行上述命令，就这样层层深入最终确定是那个目录文件最多1for i in /*; do echo $i; find $i | wc -l; done 如何删除那个目录的的所有文件一般情况下，如果这个目录下应该会有数以百万的文件，如果你直接用 rm -rf 目录名 的话效率会很低，可以用下面方法1find 目录 -type f -name &apos;*&apos; -print0 | xargs -0 rm]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python get weekday]]></title>
     <url>%2Fpython-get-weekday.html</url>
     <content type="text"><![CDATA[Quick Start1234567891011121314import datetimeimport calendardef get_current_week(): monday, sunday = datetime.date.today(), datetime.date.today() one_day = datetime.timedelta(days=1) while monday.weekday() != calendar.MONDAY: monday -= one_day while sunday.weekday() != calendar.SUNDAY: sunday += one_day return monday, sundayprint(get_current_week())]]></content>
